@@ -1,0 +1,5 @@
+fragment ${name} on ${type} {
+  id
+  ${fields}
+  __typename
+}

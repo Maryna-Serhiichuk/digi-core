@@ -1,0 +1,15 @@
+query variable {
+  variable {
+    data {
+      attributes {
+        main_page {
+          data {
+            attributes {
+              ...Page
+            }
+          }
+        }
+      }
+    }
+  }
+}
