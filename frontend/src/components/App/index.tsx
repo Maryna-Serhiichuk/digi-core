@@ -1,22 +1,16 @@
-import { ReactElement } from "react"
-import ApolloProvider from "./ApolloProvider";
+import { PropsWithChildren, ReactElement } from "react"
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeProvider from "./ThemeProvider";
 
-export type AppProps = {
-    children: ReactElement | ReactElement[]
-}
-
-App.ApolloProvider = ApolloProvider
 App.ErrorBoundary = ErrorBoundary;
 App.ThemeProvider = ThemeProvider;
   
-export function App({ children }: AppProps) {
+function App({ children }: PropsWithChildren) {
     return <App.ThemeProvider>
         <App.ErrorBoundary>
-            <App.ApolloProvider>
-                {children}
-            </App.ApolloProvider>
+            {children}
         </App.ErrorBoundary>
     </App.ThemeProvider>
 }
+
+export default App

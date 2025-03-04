@@ -1,6 +1,0 @@
-fragment Page on Page {
-  slug
-  section {
-    __typename
-  }
-}

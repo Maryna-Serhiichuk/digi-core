@@ -1,11 +1,15 @@
-// "use client"
+"use client"
 
-import Image from "next/image";
+import { Gap } from "@/components/Gap";
+import { MainHero } from "@/sections/MainHero";
+import { Col, Row } from "antd";
 
 export default function Home() {
   return (
-    <div className={''}>
-      home
-    </div>
+    <Col span={24}>
+      <Gap>
+        <MainHero/>
+      </Gap>
+    </Col>
   );
 }

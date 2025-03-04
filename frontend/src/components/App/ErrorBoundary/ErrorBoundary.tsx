@@ -1,7 +1,7 @@
 'use client';
 
 import { Alert } from 'antd';
-import { ReactElement } from 'react';
+import { ReactElement, PropsWithChildren } from 'react';
 
 export type ErrorBoundaryProps = {
   children: ReactElement
@@ -9,7 +9,7 @@ export type ErrorBoundaryProps = {
 
 export function ErrorBoundary({
   children,
-}: ErrorBoundaryProps) {
+}: PropsWithChildren) {
   return (
     <Alert.ErrorBoundary>
       {children}

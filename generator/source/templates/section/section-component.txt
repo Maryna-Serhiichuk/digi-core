@@ -1,3 +1,0 @@
-export const ${name}: FC<${type}> = ({ ${args} }) => {
-    return <div>${name}</div>
-}

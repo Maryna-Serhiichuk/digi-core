@@ -1,3 +1,0 @@
-export const sectionMap: Record<SectionKey, FC<any>> = {
-  ${array}
-}
