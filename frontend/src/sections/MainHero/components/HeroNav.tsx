@@ -13,6 +13,12 @@ const ColStyled = styled(Col)`
     }
 `
 
+const Title = styled(Typography.Title)`
+    && {
+        color: ${({ theme }: any) =>  theme?.token?.colors?.orange[95]};
+    }
+`
+
 export const HeroNav: FC = () => {
     return <Row style={{ position: 'relative', height: '100%' }}>
         <Col style={{ display: 'flex', flexDirection: 'column' }}>
@@ -25,9 +31,9 @@ export const HeroNav: FC = () => {
             </Row>
             <Row style={{ flex: '0 0 100px' }}>
                 <ColStyled>
-                    <Typography.Title level={5}>
+                    <Title level={5}>
                         Estatein real estate
-                    </Typography.Title>
+                    </Title>
                     <Typography.Text>
                         Web Development
                     </Typography.Text>

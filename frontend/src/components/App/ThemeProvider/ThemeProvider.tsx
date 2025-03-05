@@ -104,9 +104,9 @@ const globalStyles = `
     }
     h5.ant-typography {
         font-weight: 400;
-        color: ${colors.orange[95]};
+        color: ${colors.grey[70]};
         margin-bottom: 5px;
-        ${responsiveSize('font-size', 18, 16, 14)}
+        ${responsiveSize('font-size', 21, 16, 14)}
     }
     h1, h2, h3, h4, h5 {
         &.ant-typography {

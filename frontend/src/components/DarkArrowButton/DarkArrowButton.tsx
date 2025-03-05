@@ -30,6 +30,7 @@ const Hover = styled(Row)`
     .ant-typography {
         margin: 0;
         color: ${({ theme }: any) =>  theme?.token?.colors?.grey[70]};
+        white-space: nowrap;
     }
 
     .dark-arrow-button{

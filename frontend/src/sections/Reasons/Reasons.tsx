@@ -8,12 +8,6 @@ import { DarkArrowButton } from "@/components/DarkArrowButton";
 import { responsiveSize } from "@/utils/responsiveSize";
 import { Section } from "@/components/Section";
 
-const Description = styled(Typography.Title)`
-    && {
-        color: ${({ theme }: any) =>  theme?.token?.colors?.grey[70]};
-    }
-`
-
 const ItemRow = styled('div')`
     height: 100%;
     display: flex;
@@ -38,9 +32,9 @@ export const Reasons: FC = () => {
                                 </Typography.Title>
                             </Row>
                             <Row>
-                                <Description level={5}>
+                                <Typography.Title level={5}>
                                     {reason?.description}
-                                </Description>
+                                </Typography.Title>
                             </Row>
                         </Space>
                         <ButtonRow>
