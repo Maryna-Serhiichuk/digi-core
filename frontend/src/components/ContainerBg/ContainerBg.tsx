@@ -5,6 +5,8 @@ import { FC, PropsWithChildren } from "react";
 import styled from "@emotion/styled"
 
 const StyledCol = styled('div')`
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
     height: 100%;

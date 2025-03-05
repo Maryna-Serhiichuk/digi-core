@@ -17,6 +17,7 @@ type PaddingState = [number[], Array<number[]>]
 const StyledRow = styled(Row, {
     shouldForwardProp: (prop) => !['paddingInline', 'paddingBlock'].includes(prop),
   })<{ paddingInline: number[], paddingBlock: Array<number[]> }>`
+    flex-grow: 1;
     ${({ paddingInline }) => responsiveSize('padding-left', paddingInline[0], paddingInline[1], paddingInline[2])}
     ${({ paddingInline }) => responsiveSize('padding-right', paddingInline[0], paddingInline[1], paddingInline[2])}
 
@@ -43,8 +44,8 @@ const getPadding = ({ inlineSize, blockSize }: PaddingArgs): PaddingState => {
         if(typeof blockSize === 'string'){
             switch (blockSize) {
                 case 'large': return [[100, 50, 30], [80, 50, 30]]
-                case 'middle': return [[3, 2, 1], [3, 2, 1]]
-                case 'small': return [[3, 2, 1], [3, 2, 1]]
+                case 'middle': return [[50, 40, 24], [50, 40, 24]]
+                case 'small': return [[40, 30, 24], [40, 30, 24]]
             }
         } else if(typeof blockSize === 'number') {
             return [[blockSize, blockSize/2, blockSize/3], [blockSize, blockSize/2, blockSize/3]]

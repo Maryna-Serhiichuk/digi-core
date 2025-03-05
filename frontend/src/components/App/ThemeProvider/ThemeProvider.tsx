@@ -84,23 +84,27 @@ const globalStyles = `
         font-weight: 500;
         text-transform: uppercase;
     }
-
     h2.ant-typography {
         ${responsiveSize('font-size', 48, 38, 28)}
         font-weight: 600;
         text-transform: uppercase;
     }
-
+    h3.ant-typography { 
+        font-family: ${robotoMono.style.fontFamily};
+        font-weight: 400;
+        color: ${colors.orange[95]};
+        text-transform: uppercase;
+        ${responsiveSize('font-size', 30, 20, 20)}
+    }
     h4.ant-typography { 
         font-family: ${robotoMono.style.fontFamily};
         font-weight: 500;
         color: ${colors.grey[40]};
-        ${responsiveSize('font-size', 23, 16, 14)}
+        ${responsiveSize('font-size', 23, 22, 20)}
     }
     h5.ant-typography {
         font-weight: 400;
         color: ${colors.orange[95]};
-        text-transform: uppercase;  
         margin-bottom: 5px;
         ${responsiveSize('font-size', 18, 16, 14)}
     }
@@ -166,8 +170,8 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 // fontSizeHeading4: 20,
                 // fontSizeHeading5: 18,
                 colorTextHeading: colors.orange[95],
-                titleMarginTop: '.5em',
-                titleMarginBottom: '.3em',
+                titleMarginTop: 0,
+                titleMarginBottom: 0,
             },
         },
     }), [xl])

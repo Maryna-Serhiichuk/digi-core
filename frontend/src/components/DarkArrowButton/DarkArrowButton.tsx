@@ -18,6 +18,7 @@ const Circle = styled(Col)`
     svg {
         transform: rotate(-45deg);
         font-size: 30px;
+        ${responsiveSize('font-size', 30, 20, 19)}
         fill: ${({ theme }: any) =>  theme?.token?.colors?.orange[80]};
     }
 `
@@ -48,7 +49,7 @@ const Hover = styled(Row)`
 `
 
 export const DarkArrowButton: FC<PropsWithChildren> = ({ children }) => {
-    return <Hover align={'middle'} justify={'center'}>
+    return <Hover wrap={false} align={'middle'} justify={'center'}>
         <Circle className="dark-arrow-button-circle">
             <ArrowRightOutlined/>
         </Circle>

@@ -7,6 +7,10 @@ import imgMiddle from '@/sources/view-blue/middle.jpg'
 
 const ColStyled = styled(Col)`
     padding: 30px;
+
+    .ant-typography {
+        text-transform: uppercase;
+    }
 `
 
 export const HeroNav: FC = () => {
