@@ -2,13 +2,15 @@
 
 import { Gap } from "@/components/Gap";
 import { MainHero } from "@/sections/MainHero";
-import { Col, Row } from "antd";
+import { Successes } from "@/sections/Successes";
+import { Col } from "antd";
 
 export default function Home() {
   return (
     <Col span={24}>
       <Gap>
         <MainHero/>
+        <Successes/>
       </Gap>
     </Col>
   );

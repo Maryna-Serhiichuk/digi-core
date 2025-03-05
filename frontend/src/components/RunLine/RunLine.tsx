@@ -1,8 +1,6 @@
 import { FC } from "react";
 import Marquee from "react-fast-marquee";
 import styled from "@emotion/styled"
-
-import "./RunLine.css";
 import { Typography } from "antd";
 import { responsiveSize } from "@/utils/responsiveSize";
 

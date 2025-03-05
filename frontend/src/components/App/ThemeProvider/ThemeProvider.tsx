@@ -4,10 +4,10 @@ import { FC, PropsWithChildren, useState, useMemo, useCallback } from 'react';
 import { ConfigProvider, Grid } from 'antd';
 import { Roboto_Mono, Roboto_Flex } from 'next/font/google'
 import EmotionProvider from '../EmotionProvider';
-import { ThemeConfig, ColorsType } from './index';
 import { responsiveSize } from '@/utils/responsiveSize';
+import { ColorsType, ThemeConfig } from '@/components/types/theme';
 
-const roboto = Roboto_Mono({
+const robotoMono = Roboto_Mono({
     weight: ['400', '500', '700'],
     style: ['normal', 'italic'],
     subsets: ['latin'],
@@ -64,7 +64,7 @@ const colors: ColorsType = {
 
 const globalStyles = `
     * {
-        font-family: ${roboto.style.fontFamily};
+        font-family: ${robotoMono.style.fontFamily};
     }
     @media (prefers-color-scheme: dark) {
         :root {
@@ -84,7 +84,15 @@ const globalStyles = `
         font-weight: 500;
         text-transform: uppercase;
     }
+
+    h2.ant-typography {
+        ${responsiveSize('font-size', 48, 38, 28)}
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
     h4.ant-typography { 
+        font-family: ${robotoMono.style.fontFamily};
         font-weight: 500;
         color: ${colors.grey[40]};
         ${responsiveSize('font-size', 23, 16, 14)}
@@ -106,7 +114,6 @@ const globalStyles = `
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const { xs, sm, md, lg, xl } = Grid.useBreakpoint()
-    console.log(xs, sm, md, lg, xl)
     const [isDarkMode, setIsDarkMode] = useState(false)
 
     const getFontSizeHeading1 = useCallback(() => {
@@ -160,7 +167,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 // fontSizeHeading5: 18,
                 colorTextHeading: colors.orange[95],
                 titleMarginTop: '.5em',
-                titleMarginBottom: '.5em',
+                titleMarginBottom: '.3em',
             },
         },
     }), [xl])

@@ -1,3 +1,4 @@
+import 'antd/es/theme/interface';
 import { ThemeConfig as AntdThemeConfig, } from 'antd';
 
 type AppThemeToken = Required<AntdThemeConfig['token']> & { colors: ColorsType }
@@ -5,7 +6,6 @@ type AppThemeToken = Required<AntdThemeConfig['token']> & { colors: ColorsType }
 type ThemeConfig = Omit<AntdThemeConfig, 'token'> & {
     token?: Partial<AppThemeToken>
 };
-
 
 type ColorsType = {
     test: string,
@@ -43,4 +43,10 @@ type ColorsType = {
         '97': string,
         '99': string,
     },
+}
+
+declare module 'antd/es/theme/interface' {
+  interface GlobalToken {
+    colors?: ColorsType
+  }
 }
