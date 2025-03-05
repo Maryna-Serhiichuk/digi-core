@@ -34,7 +34,7 @@ export const Successes: FC = () => {
         <Border>
             <Gap>
                 {successes?.map((success, index) => (
-                    <ContainerBg xs={(successes?.length % 2 !== 0 && successes.length-1 === index) ? 24 : 12} sm={8} lg={4}>
+                    <ContainerBg key={success?.key} xs={(successes?.length % 2 !== 0 && successes.length-1 === index) ? 24 : 12} sm={8} lg={4}>
                         <Container span={24}>
                             <Row justify={'center'}>
                                 <Key level={4}>

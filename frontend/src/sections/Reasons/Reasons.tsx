@@ -28,7 +28,7 @@ const ButtonRow = styled(Row)`
 export const Reasons: FC = () => {
     return <Section label={"Reasons to Choose DigiCore for your digital journey"}>
         {reasons?.map(reason => (
-            <ContainerBg xs={24} md={12} lg={6}>
+            <ContainerBg key={reason?.title} xs={24} md={12} lg={6}>
                 <Padding inlineSize={'small'} blockSize={'small'}>
                     <ItemRow>
                         <Space size={12} direction={'vertical'}>

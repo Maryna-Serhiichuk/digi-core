@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Marquee from "react-fast-marquee";
 import styled from "@emotion/styled"
-import { Typography } from "antd";
+import { Col, Typography } from "antd";
 import { responsiveSize } from "@/utils/responsiveSize";
 
 const lineWords = ['Website Design', 'Branding', 'Website Development', 'Mobile App Development', 'Digital Marketing']
@@ -32,15 +32,23 @@ const MarqueeBg = styled(Marquee)`
     border-radius: 10px;
 `
 
+const Container = styled(Col)`
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+`
+
 export const RunLine: FC = () => {
-    return <MarqueeBg autoFill={true} speed={100}>
-        {lineWords?.map(it => (
-            <Item>
-                <Word level={4} style={{ marginBottom: 0 }}>
-                    {it}
-                </Word>
-                <Circle/>
-            </Item>
-        ))}
-    </MarqueeBg>
+    return <Container>
+        <MarqueeBg autoFill={true} speed={100}>
+            {lineWords?.map(it => (
+                <Item key={it}>
+                    <Word level={4} style={{ marginBottom: 0 }}>
+                        {it}
+                    </Word>
+                    <Circle/>
+                </Item>
+            ))}
+        </MarqueeBg>
+    </Container>
 }
