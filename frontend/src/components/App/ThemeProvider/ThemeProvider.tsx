@@ -100,7 +100,7 @@ const globalStyles = `
         font-family: ${robotoMono.style.fontFamily};
         font-weight: 500;
         color: ${colors.grey[40]};
-        ${responsiveSize('font-size', 23, 22, 20)}
+        ${responsiveSize('font-size', 23, 20, 18)}
     }
     h5.ant-typography {
         font-weight: 400;

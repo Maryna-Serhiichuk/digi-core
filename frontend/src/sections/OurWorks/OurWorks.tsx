@@ -13,7 +13,7 @@ export const OurWorks: FC = () => {
         <Gap>
             <Title label={'Our Works'}/>
             {ourWorks?.map(item => (
-                <Project {...item} />
+                <Project key={item?.title} {...item} />
             ))}
             {xs && <MoreButton/> }
         </Gap>

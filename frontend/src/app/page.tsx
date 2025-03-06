@@ -6,6 +6,7 @@ import { OurServices } from "@/sections/OurServices";
 import { OurWorks } from "@/sections/OurWorks";
 import { Reasons } from "@/sections/Reasons";
 import { Successes } from "@/sections/Successes";
+import { Testimonials } from "@/sections/Testimonials";
 import { Col } from "antd";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <Reasons/>
         <OurServices/>
         <OurWorks/>
+        <Testimonials/>
       </Gap>
     </Col>
   );
