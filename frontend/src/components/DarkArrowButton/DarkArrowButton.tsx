@@ -4,19 +4,21 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import { Col, Row, Typography } from "antd";
 import { responsiveSize } from "@/utils/responsiveSize";
 
-const Circle = styled(Col)`
+const Circle = styled(Col, {
+    shouldForwardProp: (prop) => !['rotate'].includes(prop),
+})<{ rotate?: number }>`
     display: flex;
     align-items: center;
     justify-content: center;
     ${responsiveSize('width', 68, 40, 40)}
     ${responsiveSize('height', 68, 40, 40)}
-    margin-right: 12px;
-    background: ${({ theme }: any) =>  theme?.token?.colors?.dark['06']};
+    ${responsiveSize('margin-right', 12, 10, 8)}
+    background: ${({ theme }: any) => theme?.token?.colors?.dark['06']};
     border: 1px solid ${({ theme }: any) =>  theme?.token?.colors?.dark[15]};
     border-radius: 50%;
 
     svg {
-        transform: rotate(-45deg);
+        transform: rotate(${({ rotate }: any) => rotate ?? -45}deg);
         font-size: 30px;
         ${responsiveSize('font-size', 30, 20, 19)}
         fill: ${({ theme }: any) =>  theme?.token?.colors?.orange[80]};
@@ -49,9 +51,9 @@ const Hover = styled(Row)`
     }
 `
 
-export const DarkArrowButton: FC<PropsWithChildren> = ({ children }) => {
+export const DarkArrowButton: FC<PropsWithChildren<{ rotate?: number }>> = ({ children, rotate }) => {
     return <Hover wrap={false} align={'middle'} justify={'center'}>
-        <Circle className="dark-arrow-button-circle">
+        <Circle rotate={rotate} className="dark-arrow-button-circle">
             <ArrowRightOutlined/>
         </Circle>
         <Col className="dark-arrow-button-text">

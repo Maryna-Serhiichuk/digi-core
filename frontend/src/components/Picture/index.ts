@@ -1,5 +1,6 @@
-import { Picture } from "./Picture";
+import { Picture, PictureArgs } from "./Picture";
 
 export {
-    Picture
+    Picture,
+    type PictureArgs
 }

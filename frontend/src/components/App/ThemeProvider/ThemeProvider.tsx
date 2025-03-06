@@ -116,6 +116,8 @@ const globalStyles = `
     }
 `;
 
+console.log(robotoFlex.style.fontFamily)
+
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const { xs, sm, md, lg, xl } = Grid.useBreakpoint()
     const [isDarkMode, setIsDarkMode] = useState(false)

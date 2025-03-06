@@ -15,7 +15,7 @@ const StyledCol = styled('div')`
     border-radius: 16px;
 `
 
-export const ContainerBg: FC<PropsWithChildren<Pick<ColProps, 'span' | 'xs' | 'sm' | 'md' | 'lg'> & { outsideChildren?: PropsWithChildren['children'] }>> = ({ children, outsideChildren, ...colProps }) => {
+export const ContainerBg: FC<PropsWithChildren<Pick<ColProps, 'span' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'> & { outsideChildren?: PropsWithChildren['children'] }>> = ({ children, outsideChildren, ...colProps }) => {
     return <Col span={24} {...colProps}>
         {outsideChildren}
         <StyledCol style={{ paddingLeft: 0, paddingRight: 0 }}>
