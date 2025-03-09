@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Home",
+        "links": [
+            {
+                "label": "Why Us",
+                "link": "/"
+            },
+            {
+                "label": "About Us",
+                "link": "/about-us"
+            },
+            {
+                "label": "Testimotials",
+                "link": "/testimotials"
+            },
+            {
+                "label": "FAQ's",
+                "link": "/faq"
+            }
+        ]
+    },
+    {
+        "name": "Services",
+        "links": [
+            {
+                "label": "Web Development",
+                "link": "/"
+            },
+            {
+                "label": "App Development",
+                "link": "/"
+            },
+            {
+                "label": "Web Design",
+                "link": "/"
+            },
+            {
+                "label": "Digital Marketing",
+                "link": "/faq"
+            }
+        ]
+    },
+    {
+        "name": "Projects",
+        "links": [
+            {
+                "label": "Klothink",
+                "link": "/"
+            },
+            {
+                "label": "Zenith",
+                "link": "/"
+            },
+            {
+                "label": "Novus",
+                "link": "/"
+            },
+            {
+                "label": "Apex",
+                "link": "/"
+            }
+        ]
+    },
+    {
+        "name": "Blogs",
+        "links": [
+            {
+                "label": "Business",
+                "link": "/"
+            },
+            {
+                "label": "Design",
+                "link": ""
+            },
+            {
+                "label": "Development",
+                "link": ""
+            }
+        ]
+    }
+]
