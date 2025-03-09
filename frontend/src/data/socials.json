@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Instagram",
+        "description": "Share visually appealing snippets of our latest web projects."
+    },
+    {
+        "name": "Twitter",
+        "description": "Tweet about interesting coding challenges you've overcome."
+    },
+    {
+        "name": "Dribbble",
+        "description": "Showcase design elements of our web projects."
+    },
+    {
+        "name": "Behance",
+        "description": "Create detailed presentations for our projects."
+    }
+]

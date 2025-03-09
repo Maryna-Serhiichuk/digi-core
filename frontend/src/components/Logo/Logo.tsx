@@ -10,7 +10,7 @@ export const Logo: FC = () => {
         </Col>
         <Col>
             <Typography style={{ fontSize: 28 }}>
-                NextJs
+                DigiCore
             </Typography>
         </Col>
     </Row>

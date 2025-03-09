@@ -35,7 +35,7 @@ export const IconDescription: FC<IconDescriptionArgs> = ({ icon, title, descript
                             <IconSquareLabel icon={icon} title={title}/>
                         </Col>
                         <Col hidden={!sm}>
-                            <DarkArrowButton>
+                            <DarkArrowButton color={'ghost'}>
                                 {xl ? 'Book a call' : ''}
                             </DarkArrowButton>
                         </Col>
@@ -48,7 +48,7 @@ export const IconDescription: FC<IconDescriptionArgs> = ({ icon, title, descript
                 </SpaceBetween>
                 <Row justify={sm ? 'end' : 'start'}>
                     {!sm
-                        ? <DarkArrowButton>
+                        ? <DarkArrowButton color={'ghost'}>
                             Learn More
                         </DarkArrowButton>
                         : <Typography.Title level={3}>

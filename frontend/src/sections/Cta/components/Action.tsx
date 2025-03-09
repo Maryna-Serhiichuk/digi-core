@@ -25,7 +25,7 @@ export const Action: FC = () => {
                             Ready to Transform Your Digital Presence?
                         </Title>
                         <Description>
-                            Take the first step towards digital success with NexGen by your side. Our team of experts is eager to craft tailored solutions that drive growth for your business.
+                            Take the first step towards digital success with DigiCore by your side. Our team of experts is eager to craft tailored solutions that drive growth for your business.
                         </Description>
                     </Col>
                     <Col>

@@ -47,7 +47,7 @@ export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, t
                                     <IconSquareLabel icon={icon} title={title} />
                                 </Col>
                                 <Col hidden={xs}>
-                                    <DarkArrowButton>
+                                    <DarkArrowButton color={'ghost'}>
                                         Details
                                     </DarkArrowButton>
                                 </Col>
@@ -91,7 +91,7 @@ export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, t
                                 </Row>
                                 <Row gutter={[10, 10]}>
                                     {technologies?.map(technology => (
-                                        <Tag value={technology} />
+                                        <Tag key={technology} value={technology} />
                                     ))}
                                 </Row>
                             </Padding>

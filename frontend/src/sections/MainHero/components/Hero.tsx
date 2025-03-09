@@ -27,7 +27,7 @@ export const Hero: FC = () => {
         </Row>
         <Row>
             <Typography.Title level={4}>
-                At NexGen, we believe in the transformative power of digital solutions. Our team of experts is dedicated to helping businesses like yours thrive in the fast-paced digital landscape.
+                At DigiCore, we believe in the transformative power of digital solutions. Our team of experts is dedicated to helping businesses like yours thrive in the fast-paced digital landscape.
             </Typography.Title>
         </Row>
     </Col>

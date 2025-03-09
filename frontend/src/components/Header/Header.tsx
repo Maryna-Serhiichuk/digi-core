@@ -22,7 +22,7 @@ export const Header: FC = () => {
                 <Col>
                     <Row gutter={[16, 0]} align={'middle'} wrap={false}>
                         {header?.map(button => (
-                            <Col key={button.link}>
+                            <Col key={button.label}>
                                 <Link href={button?.link}>
                                     <Button type={'default'}>
                                         {button?.label}

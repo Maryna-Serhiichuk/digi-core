@@ -46,8 +46,8 @@ const Container = styled(Col)`
 export const RunLine: FC<RunLineArgs> = ({ data, background }) => {
     return <Container>
         <MarqueeBg background={background} autoFill={true} speed={100}>
-            {data?.map(it => (
-                <Item key={it}>
+            {data?.map((it, i) => (
+                <Item key={it + i}>
                     <Word level={4} style={{ marginBottom: 0 }}>
                         {it}
                     </Word>
