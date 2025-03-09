@@ -10,6 +10,7 @@ import { Hero, HeroNav } from "./components";
 import { HeroNavArrow } from "./components/HeroNavArrow";
 import styled from "@emotion/styled"
 import { responsiveSize } from "@/utils/responsiveSize";
+import lineWords from '@/data/services.json'
 
 const ContainerBgHover = styled(ContainerBg)`
     &:hover {
@@ -37,7 +38,7 @@ export const MainHero: FC = () => {
                     <Hero/>
                 </Padding>
                 <Padding inlineSize={'small'} blockSize={[0, 40]}>
-                    <RunLine />
+                    <RunLine data={lineWords} />
                 </Padding>
             </ContainerBg>
             <ContainerBgHover xs={0} md={8} outsideChildren={<HeroNavArrow/>}>

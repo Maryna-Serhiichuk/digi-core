@@ -4,7 +4,10 @@ import styled from "@emotion/styled"
 import { Col, Typography } from "antd";
 import { responsiveSize } from "@/utils/responsiveSize";
 
-const lineWords = ['Website Design', 'Branding', 'Website Development', 'Mobile App Development', 'Digital Marketing']
+interface RunLineArgs {
+    data: string[]
+    background?: 'default' | 'ghost'
+}
 
 const Circle = styled('div')`
     width: 8px;
@@ -27,8 +30,10 @@ const Item = styled('div')`
     ${responsiveSize('padding-bottom', 23, 18, 14)}
 `
 
-const MarqueeBg = styled(Marquee)`
-    background: ${({ theme }: any) =>  theme?.token?.colors?.dark['06']};
+const MarqueeBg = styled(Marquee, {
+    shouldForwardProp: (prop) => !['background'].includes(prop),
+})<{ background?: RunLineArgs['background'] }>`
+    background: ${({ theme, background }: any) => background ? theme?.token?.colors?.dark[10] : theme?.token?.colors?.dark['06']};
     border-radius: 10px;
 `
 
@@ -38,10 +43,10 @@ const Container = styled(Col)`
     justify-content: end;
 `
 
-export const RunLine: FC = () => {
+export const RunLine: FC<RunLineArgs> = ({ data, background }) => {
     return <Container>
-        <MarqueeBg autoFill={true} speed={100}>
-            {lineWords?.map(it => (
+        <MarqueeBg background={background} autoFill={true} speed={100}>
+            {data?.map(it => (
                 <Item key={it}>
                     <Word level={4} style={{ marginBottom: 0 }}>
                         {it}

@@ -44,7 +44,7 @@ const getPadding = ({ inlineSize, blockSize }: PaddingArgs): PaddingState => {
         if(typeof blockSize === 'string'){
             switch (blockSize) {
                 case 'large': return [[100, 50, 30], [80, 50, 30]]
-                case 'middle': return [[50, 40, 24], [50, 40, 24]]
+                case 'middle': return [[60, 40, 24], [60, 40, 24]]
                 case 'small': return [[40, 30, 24], [40, 30, 24]]
             }
         } else if(typeof blockSize === 'number') {

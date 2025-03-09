@@ -9,6 +9,8 @@ import { Reasons } from "@/sections/Reasons";
 import { Successes } from "@/sections/Successes";
 import { Testimonials } from "@/sections/Testimonials";
 import { Col } from "antd";
+import { Cta } from "@/sections/Cta";
+import { Follow } from "@/sections/Follow";
 
 export default function Home() {
   return (
@@ -21,6 +23,8 @@ export default function Home() {
         <OurWorks/>
         <Testimonials/>
         <Faq/>
+        <Cta/>
+        <Follow/>
       </Gap>
     </Col>
   );
