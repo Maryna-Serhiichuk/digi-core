@@ -1,5 +1,6 @@
 "use client"
 
+import { Faq } from "@/sections/Faq";
 import { Gap } from "@/components/Gap";
 import { MainHero } from "@/sections/MainHero";
 import { OurServices } from "@/sections/OurServices";
@@ -19,6 +20,7 @@ export default function Home() {
         <OurServices/>
         <OurWorks/>
         <Testimonials/>
+        <Faq/>
       </Gap>
     </Col>
   );

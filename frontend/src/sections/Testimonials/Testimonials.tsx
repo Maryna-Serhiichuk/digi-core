@@ -29,7 +29,7 @@ const Person = styled(Typography.Title)`
 export const Testimonials: FC = () => {
     return <Section label={"Testimonials"}>
         {testimonials?.map(testimonial => (
-            <ContainerBg xs={24} md={12} xl={6}>
+            <ContainerBg key={testimonial?.title} xs={24} md={12} xl={6}>
                 <Padding inlineSize={'small'} blockSize={'small'}>
                     <Space size={16} direction={'vertical'}>
                         <Row>

@@ -1,0 +1,22 @@
+[
+    {
+        "label": "How long does it take to complete a web development project?",
+        "text": "The timeline varies depending on the project's complexity and requirements. Our team strives to deliver projects on time while maintaining the highest quality standards."
+    },
+    {
+        "label": "Can you handle large-scale mobile app development projects?",
+        "text": "Yes, our company specializes in large-scale mobile app development. We build scalable, secure, and high-performance applications, leveraging efficient architectures, state management, and backend integrations. Our expertise ensures smooth functionality, maintainability, and seamless user experience across platforms."
+    },
+    {
+        "label": "Can you integrate third-party APIs into our mobile app?",
+        "text": "Yes, we seamlessly integrate third-party APIs into mobile applications, ensuring secure and efficient data exchange. Our expertise covers REST and GraphQL APIs, authentication (OAuth, API keys), rate limit handling, caching, and error management. We optimize API interactions for performance, reliability, and seamless user experience across platforms."
+    },
+    {
+        "label": "How do you ensure cross-platform compatibility for mobile apps?",
+        "text": "We ensure cross-platform compatibility by using frameworks like React Native and optimizing UI/UX for various screen sizes and devices. Our approach includes thorough testing, platform-specific adjustments, and adherence to best practices for performance and consistency. This guarantees a seamless and responsive experience on both iOS and Android."
+    },
+    {
+        "label": "What is your approach to user experience (UX) design?",
+        "text": "Our approach to UX design focuses on intuitive navigation, responsive layouts, and accessibility. We conduct user research, create wireframes, and perform iterative testing to refine interactions. By prioritizing performance, clear design, and consistent UI elements, we ensure a seamless, engaging, and user-friendly experience that enhances satisfaction and usability."
+    }
+]

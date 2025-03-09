@@ -114,20 +114,22 @@ const globalStyles = `
             
         }
     }
+    .ant-typography {
+         ${responsiveSize('font-size', 18, 16, 14)}
+    }
 `;
-
-console.log(robotoFlex.style.fontFamily)
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const { xs, sm, md, lg, xl } = Grid.useBreakpoint()
     const [isDarkMode, setIsDarkMode] = useState(false)
 
-    const getFontSizeHeading1 = useCallback(() => {
-        if (!xl) return 58
-        return 78
-    }, [xl])
-
-    console.log(getFontSizeHeading1())
+    const getCollapseHeadPadding = useCallback(() => {
+        if (xl) return 50
+        if (md) return 40
+        if (sm) return 24
+        if (xs) return 24
+        return 60
+    }, [xl, md, sm, xs])
 
     const lightTheme: ThemeConfig = useMemo(() => ({
         // algorithm: theme.darkAlgorithm,
@@ -162,8 +164,21 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               defaultActiveBorderColor: 'transparent',
               contentFontSize: 18
             },
+            Form: {
+                labelColor: colors?.orange[90],
+                labelFontSize: 18,
+            },
             Input: {
               colorPrimary: '#eb2f96',
+              paddingBlock: 24,
+              paddingInline: 24,
+              borderRadius: 12,
+              colorText: colors.grey[90],
+              fontSize: 18,
+              colorTextPlaceholder: colors.grey[40],
+              activeBorderColor: colors?.orange[70],
+              hoverBorderColor: colors?.orange[70],
+              activeShadow: 'none',
               // algorithm: true, // Enable algorithm
             },
             Typography: {
@@ -175,6 +190,13 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 titleMarginTop: 0,
                 titleMarginBottom: 0,
             },
+            Collapse: {
+                contentPadding: getCollapseHeadPadding(),
+                headerPadding: getCollapseHeadPadding(),
+            },
+            Divider: {
+                colorSplit: colors?.dark[15]
+            }
         },
     }), [xl])
 

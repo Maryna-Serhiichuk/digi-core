@@ -50,7 +50,6 @@ const getPadding = ({ inlineSize, blockSize }: PaddingArgs): PaddingState => {
         } else if(typeof blockSize === 'number') {
             return [[blockSize, blockSize/2, blockSize/3], [blockSize, blockSize/2, blockSize/3]]
         } else if(typeof blockSize === 'object') {
-            console.log(blockSize, [blockSize[0], blockSize[0]/2, blockSize[0]/3])
             return [[blockSize[0], blockSize[0]/2, blockSize[0]/3], [blockSize[1],blockSize[1]/2,blockSize[1]/3]]
         } else {
             return [[3, 2, 1], [3, 2, 1]]

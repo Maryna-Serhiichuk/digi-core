@@ -107,7 +107,7 @@ export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, t
                                     <Col>
                                         <Space size={10}>
                                             {members?.map(member => (
-                                                <Avatar size={50} src={member?.src}/>
+                                                <Avatar key={member?.src} size={50} src={member?.src}/>
                                             ))}
                                         </Space>
                                     </Col>
