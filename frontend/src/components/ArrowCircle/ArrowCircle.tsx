@@ -6,7 +6,7 @@ import { Col } from "antd";
 
 export interface ArrowCircleArgs {
     rotate?: number,
-    color?: 'default' | 'ghost'
+    color?: 'default' | 'ghost' | 'light'
 }
 
 const Circle = styled(Col, {
@@ -21,7 +21,7 @@ const Circle = styled(Col, {
     ${responsiveSize('width', 68, 40, 40)}
     ${responsiveSize('height', 68, 40, 40)}
     ${responsiveSize('margin-right', 12, 10, 8)}
-    background: ${({ theme, color }: any) => color === 'ghost' ? theme?.token?.colors?.dark[12] : theme?.token?.colors?.dark['06']};
+    background: ${({ theme, color }: any) => color === 'ghost' ? theme?.token?.colors?.dark[12] : (color === 'light' ? 'white' : theme?.token?.colors?.dark['06'])};
     border: 1px solid ${({ theme }: any) =>  theme?.token?.colors?.dark[15]};
     border-radius: 50%;
 
@@ -29,7 +29,7 @@ const Circle = styled(Col, {
         transform: rotate(${({ rotate }: any) => rotate ?? -45}deg);
         font-size: 30px;
         ${responsiveSize('font-size', 30, 20, 19)}
-        fill: ${({ theme }: any) =>  theme?.token?.colors?.orange[80]};
+        fill: ${({ theme, color }: any) => color === 'light' ? 'black' : theme?.token?.colors?.orange[80]};
     }
 `
 
