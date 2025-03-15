@@ -42,7 +42,7 @@ export const ProjectHead: FC<ProjectHeadArgs> = ({ tags, description, icon, titl
                 <Row align={'middle'}>
                     <Space size={16} direction={'vertical'}>
                         {tags?.map(tag => (
-                            <Tag name={tag?.key} value={tag?.value} />
+                            <Tag key={tag?.key} name={tag?.key} value={tag?.value} />
                         ))}
                     </Space>
                 </Row>

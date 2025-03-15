@@ -20,8 +20,7 @@ export const Story: FC<StoryArgs> = ({ industry, service, challenge, solution, r
             <Border>
                 <Gap>
                     <ProjectHead
-                        xs={24} sm={24} 
-                        lg={12}
+                        xs={24} sm={24} lg={12}
                         title={title}
                         icon={icon}
                         tags={[

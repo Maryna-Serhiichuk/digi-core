@@ -35,7 +35,7 @@ export const Tabs: FC<TabsArgs> = ({ source }) => {
                     <Row>
                         <Gap>
                             {source?.map((it, i) => (
-                                <Col>
+                                <Col key={it?.label}>
                                     <Button type={activeKey === i ? 'primary' :'default'} ghost={activeKey !== i} onClick={() => setActivekey(i)}>
                                         <Span>{it?.label}</Span>
                                     </Button>

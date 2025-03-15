@@ -10,7 +10,7 @@ export const Stories: FC = () => {
         <Gap>
             <Title label={'Success Stories'}/>
             {stories?.map(story => (
-                <Story {...story} />
+                <Story key={story?.title} {...story} />
             ))}
         </Gap>
     </Col>

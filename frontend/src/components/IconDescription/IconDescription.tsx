@@ -80,8 +80,8 @@ export const IconDescription: FC<IconDescriptionArgs> = ({ icon, title, descript
                             </Col>
                         </Row>
                         <Row gutter={[20, 0]}>
-                            {images?.map(img => (
-                                <Col span={12}>
+                            {images?.map((img, i) => (
+                                <Col key={i} span={12}>
                                     <ImageButton {...img}/>
                                 </Col>
                             ))}
