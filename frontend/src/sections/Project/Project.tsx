@@ -1,15 +1,15 @@
 import { Border } from "@/components/Border";
 import { ContainerBg } from "@/components/ContainerBg";
-import { DarkArrowButton } from "@/components/DarkArrowButton";
 import { Gap } from "@/components/Gap";
-import { IconSquareLabel, IconSquareLabelArgs } from "@/components/IconSquareLabel";
+import { IconSquareLabelArgs } from "@/components/IconSquareLabel";
 import { Padding } from "@/components/Padding";
 import { Picture, PictureArgs } from "@/components/Picture";
 import { Tag } from "@/components/Tag";
-import { Avatar, Button, Col, Grid, Row, Space, Typography } from "antd";
+import { Avatar, Button, Col, Row, Space, Typography } from "antd";
 import { StaticImageData } from "next/image";
 import { FC } from "react";
 import styled from "@emotion/styled"
+import { ProjectHead } from "@/components/ProjectHead";
 
 export interface ProjectArgs extends IconSquareLabelArgs {
     description: string
@@ -20,13 +20,6 @@ export interface ProjectArgs extends IconSquareLabelArgs {
     members: StaticImageData[]
 }
 
-const SpaceBetween = styled('div')`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 30px;
-`
-
 const UpperTitle = styled(Typography.Title)`
     text-transform: uppercase;
     && {
@@ -35,46 +28,19 @@ const UpperTitle = styled(Typography.Title)`
 `
 
 export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, technologies, description, members }) => {
-    const { xs } = Grid.useBreakpoint()
     return <Col span={24}>
         <Border>
             <Gap>
-                <ContainerBg xs={{ span: 24, order: 2 }} md={{ span: 14, order: 1 }} lg={12} xl={8}>
-                    <Padding  inlineSize={'small'} blockSize={'middle'}>
-                        <SpaceBetween>
-                            <Row justify={'space-between'} wrap={false} style={{ width: '100%' }}>
-                                <Col>
-                                    <IconSquareLabel icon={icon} title={title} />
-                                </Col>
-                                <Col hidden={xs}>
-                                    <DarkArrowButton color={'ghost'}>
-                                        Details
-                                    </DarkArrowButton>
-                                </Col>
-                            </Row>
-                            <Row align={'middle'}>
-                                <Space size={16} direction={'vertical'}>
-                                    <Tag name={'Category'} value={category} />
-                                    <Tag name={'Time Taken'} value={time} />
-                                </Space>
-                            </Row>
-                            <Row align={'bottom'}>
-                                <Typography.Title level={5}>
-                                    {description}
-                                </Typography.Title>
-                            </Row>
-                            {xs && 
-                                <Row>
-                                    <Col>
-                                        <DarkArrowButton>
-                                            Details
-                                        </DarkArrowButton>
-                                    </Col>
-                                </Row>
-                            }
-                        </SpaceBetween>
-                    </Padding>
-                </ContainerBg>
+                <ProjectHead
+                    xs={{ span: 24, order: 2 }} md={{ span: 14, order: 1 }} lg={12} xl={8}
+                    title={title}
+                    icon={icon}
+                    tags={[
+                        { key: 'Category', value: category },
+                        { key: 'Time Taken', value: time },
+                    ]}
+                    description={description}
+                />
                 <ContainerBg xs={{ span: 24, order: 1 }} md={{ span: 10, order: 2 }} lg={12} xl={8}>
                     <Picture {...image} alt={title} />
                 </ContainerBg>

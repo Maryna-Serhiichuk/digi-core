@@ -4,7 +4,7 @@ import { Row, Col, ColProps } from "antd";
 import { FC, PropsWithChildren } from "react";
 import styled from "@emotion/styled"
 
-interface ContainerBgArgs extends PropsWithChildren<Pick<ColProps, 'span' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>> {
+export interface ContainerBgArgs extends PropsWithChildren<Pick<ColProps, 'span' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>> {
     outsideChildren?: PropsWithChildren['children'],
     background?: 'primary' | 'default'
 }

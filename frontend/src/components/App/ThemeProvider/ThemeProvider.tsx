@@ -154,7 +154,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               borderRadius: 10,
               controlHeight: 63,
               primaryColor: colors.dark['06'],
-              ghostBg: 'rgba(255,255,255,.1)',
+              ghostBg: colors.dark[12],
               defaultGhostColor: colors.orange[95],
               defaultGhostBorderColor: 'transparent',
               defaultBg: colors.absolute.background,

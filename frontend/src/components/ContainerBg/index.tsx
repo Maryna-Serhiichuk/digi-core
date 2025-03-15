@@ -1,5 +1,6 @@
-import { ContainerBg } from "./ContainerBg";
+import { ContainerBg, type ContainerBgArgs } from "./ContainerBg";
 
 export {
-    ContainerBg
+    ContainerBg,
+    ContainerBgArgs
 }

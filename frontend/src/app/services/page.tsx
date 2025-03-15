@@ -8,15 +8,15 @@ import { Col } from "antd";
 import { Cta } from "@/sections/Cta";
 import { Follow } from "@/sections/Follow";
 import { HeroSections } from "./(components)/HeroServices";
+import { Stories } from "@/sections/Stories";
 
 export default function Home() {
   return (
     <Col span={24}>
       <Gap>
         <HeroSections/>
-
         <OurServices images/>
-
+        <Stories/>
         <Testimonials/>
         <Faq/>
         <Cta/>
