@@ -1,5 +1,5 @@
 import { Button, Col, Row } from "antd";
-import { FC } from "react";
+import { FC, Fragment, PropsWithChildren } from "react";
 import styled from "@emotion/styled"
 import { responsiveSize } from "@/utils/responsiveSize";
 import { Gap } from "@/components/Gap";
@@ -40,7 +40,7 @@ const Navigation = styled(Row)`
     bottom: 30px;
 `
 
-export const Hero: FC<HeroArgs> = ({ main, image, ...headArgs }) => {
+export const Hero: FC<PropsWithChildren<HeroArgs>> = ({ children, main, image, ...headArgs }) => {
     return <Col span={24}>
         <Gap>
             <ContainerBg xs={24} md={16}>
@@ -56,24 +56,28 @@ export const Hero: FC<HeroArgs> = ({ main, image, ...headArgs }) => {
                     <HeroNav/>
                 </ContainerBgHover>
                 : <ContainerBg xs={24} md={8}>
-                    <Picture {...image} />
-                    <Navigation>
-                        <Padding inlineSize={'small'}>
-                            <Col span={24}>
-                                <Row justify={'space-between'}>
-                                    <DarkArrowButton color={'light'}>
-                                        View Blog
-                                    </DarkArrowButton>
-                                    <Button 
-                                        ghost
-                                        type={'default'}
-                                    >
-                                        Web development
-                                    </Button>
-                                </Row>
-                            </Col>
-                        </Padding>
-                    </Navigation>
+                    {children ??
+                        <Fragment>
+                            <Picture {...image} />
+                            <Navigation>
+                                <Padding inlineSize={'small'}>
+                                    <Col span={24}>
+                                        <Row justify={'space-between'}>
+                                            <DarkArrowButton color={'light'}>
+                                                View Blog
+                                            </DarkArrowButton>
+                                            <Button 
+                                                ghost
+                                                type={'default'}
+                                            >
+                                                Web development
+                                            </Button>
+                                        </Row>
+                                    </Col>
+                                </Padding>
+                            </Navigation>
+                        </Fragment>
+                    }
                 </ContainerBg>
             }    
         </Gap>
