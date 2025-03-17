@@ -10,11 +10,10 @@ export interface IconSquareArgs {
 }
 
 const ImageRec = styled(Col)`
-    margin-right: 16px;
     background: ${({ theme }: any) =>  theme?.token?.colors?.dark[12]};
     border: 1px solid ${({ theme }: any) =>  theme?.token?.colors?.dark[20]};
-    ${responsiveSize('padding', 16, 14, 14)}
-    ${responsiveSize('border-radius', 12, 10, 10)}
+    ${responsiveSize('padding', 16, 12, 8)}
+    border-radius: 12px;
 `
 
 export const IconSquare: FC<IconSquareArgs> = ({ icon, alt }) => {

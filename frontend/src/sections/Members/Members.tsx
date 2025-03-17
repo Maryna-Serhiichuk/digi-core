@@ -33,7 +33,7 @@ const Photo = styled(Row)`
 export const Members: FC = () => {
     return <Section label={'Meet the Visionaries Driving DigiCore Forward'}>
         {minds?.map(person => (
-            <ContainerBg xs={24} md={12} lg={6}>
+            <ContainerBg key={person?.fullName} xs={24} md={12} lg={6}>
                 <Padding inlineSize={'small'} blockSize={'small'}>
                     <Col span={24}>
                         <Flex gap={20} vertical>

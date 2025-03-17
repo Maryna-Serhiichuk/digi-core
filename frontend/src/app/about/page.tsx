@@ -7,9 +7,9 @@ import { Col } from "antd";
 import { Cta } from "@/sections/Cta";
 import { Follow } from "@/sections/Follow";
 import { HeroAbout } from "./(components)/HeroAbout";
-import { OurWorks } from "@/sections/OurWorks";
-import { Features } from "@/sections/Features";
 import { Members } from "@/sections/Members";
+import { Achievements } from "@/sections/Achievements";
+import { Awards } from "@/sections/Awards";
 
 export default function About() {
   return (
@@ -17,6 +17,8 @@ export default function About() {
       <Gap>
         <HeroAbout/>
         <Members/>
+        <Achievements/>
+        <Awards/>
         <Testimonials/>
         <Faq/>
         <Cta/>

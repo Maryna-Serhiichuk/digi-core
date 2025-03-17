@@ -10,7 +10,7 @@ interface FeatureArgs extends Omit<IconSquareArgs, 'alt'> {
 }
 
 export const Feature: FC<FeatureArgs> = ({ icon, description, title }) => {
-    return <ContainerBg  xs={24} md={12} lg={6}>
+    return <ContainerBg xs={24} md={12} lg={6}>
         <Padding inlineSize={'small'} blockSize={'small'}>
             <Col span={24}>
                 <Flex vertical gap={50}>
