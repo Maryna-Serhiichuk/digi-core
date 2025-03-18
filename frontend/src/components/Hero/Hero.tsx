@@ -14,6 +14,7 @@ import { DarkArrowButton } from "../DarkArrowButton";
 interface HeroArgs extends HeadArgs {
     main?: boolean
     image?: PictureArgs
+    withoutLine?: boolean
 }
 
 const ContainerBgHover = styled(ContainerBg)`
@@ -40,16 +41,18 @@ const Navigation = styled(Row)`
     bottom: 30px;
 `
 
-export const Hero: FC<PropsWithChildren<HeroArgs>> = ({ children, main, image, ...headArgs }) => {
+export const Hero: FC<PropsWithChildren<HeroArgs>> = ({ children, main = false, image, withoutLine = false, ...headArgs }) => {
     return <Col span={24}>
         <Gap>
             <ContainerBg xs={24} md={16}>
                 <Padding inlineSize={'large'} blockSize={[100, 60]}>
                     <Head {...headArgs}/>
                 </Padding>
-                <Padding inlineSize={'small'} blockSize={[0, 40]}>
-                    <RunLine data={lineWords} />
-                </Padding>
+                {!withoutLine &&
+                    <Padding inlineSize={'small'} blockSize={[0, 40]}>
+                        <RunLine data={lineWords} />
+                    </Padding>
+                }
             </ContainerBg>
             {main
                 ? <ContainerBgHover xs={0} md={8} outsideChildren={<HeroNavArrow/>}>

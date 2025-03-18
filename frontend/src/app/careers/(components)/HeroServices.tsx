@@ -1,13 +1,27 @@
 import { Hero } from "@/components/Hero";
 import { FC } from "react";
-import full from "@/sources/hero-projects/full.jpg"
-import middle from "@/sources/hero-projects/middle.jpg"
-import mobile from "@/sources/hero-projects/mob.jpg"
+import { Flex, Row, Typography } from "antd";
+import { Padding } from "@/components/Padding";
 
 export const HeroSections: FC = () => {
     return <Hero
-        titleLine1={'Empower Your Career'}
-        titleLine2={'in the Digital Age'}
-        image={{ full, middle, mobile, alt: '' }}
-    />
+        withoutLine
+        titleLine1={'Empower Your'}
+        titleLine2={'Career in the Digital Age'}
+    >
+        <Padding inlineSize={'middle'} blockSize={'middle'}>
+            <Flex vertical gap={50}>
+                <Row>
+                    <Typography.Title level={2}>
+                        Why Join Us?
+                    </Typography.Title>
+                </Row>
+                <Row>
+                    <Typography.Title level={5}>
+                        We strive to create a vibrant and collaborative workplace that enables our team members to thrive in their roles. Join us and become part of a passionate, innovative team dedicated to delivering outstanding digital solutions to clients worldwide. We are committed to fostering talent, supporting professional development, and cultivating an environment where creativity flourishes.
+                    </Typography.Title>
+                </Row>
+            </Flex>
+        </Padding>
+    </Hero>
 }
