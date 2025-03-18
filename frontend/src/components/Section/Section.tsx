@@ -6,11 +6,11 @@ import { Gap } from "@/components/Gap";
 
 interface SectionArgs extends TitleArgs {}
 
-export const Section: FC<PropsWithChildren<SectionArgs>> = ({ children, label }) => {
+export const Section: FC<PropsWithChildren<SectionArgs>> = ({ children, ...titleArgs }) => {
     return <Col span={24}>
         <Border>
             <Gap>
-                <Title label={label}/>
+                <Title {...titleArgs}/>
                 {children}
             </Gap>
         </Border>
