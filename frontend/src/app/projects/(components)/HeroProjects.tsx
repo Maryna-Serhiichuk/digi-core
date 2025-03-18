@@ -4,7 +4,7 @@ import full from "@/sources/hero-projects/full.jpg"
 import middle from "@/sources/hero-projects/middle.jpg"
 import mobile from "@/sources/hero-projects/mob.jpg"
 
-export const HeroSections: FC = () => {
+export const HeroProjects: FC = () => {
     return <Hero
         titleLine1={'Empowering Your'}
         titleLine2={'Digital Vision'}

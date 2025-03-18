@@ -6,7 +6,7 @@ import { Testimonials } from "@/sections/Testimonials";
 import { Col } from "antd";
 import { Cta } from "@/sections/Cta";
 import { Follow } from "@/sections/Follow";
-import { HeroSections } from "./(components)/HeroServices";
+import { HeroCareers } from "./(components)/HeroCareers";
 import { Jobs } from "@/sections/Jobs";
 import { Apply } from "@/sections/Apply";
 
@@ -14,7 +14,7 @@ export default function Projects() {
   return (
     <Col span={24}>
       <Gap>
-        <HeroSections/>
+        <HeroCareers/>
         <Jobs/>
         <Apply/>
         <Testimonials/>

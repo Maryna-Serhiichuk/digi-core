@@ -19,7 +19,7 @@ export const articles = [
         readTime: '8 mins',
         author: 'Laura Turner',
         category: Categories[0],
-        pablished: '12-20-2023',
+        published: '12-20-2023',
         illustration: { full: imgFull01 },
         contain: `
         As we step into 2025, the digital marketing landscape continues to evolve at a breakneck pace. Driven by advancements in technology, shifting consumer behaviors, and an increasingly competitive online environment, businesses must stay ahead of the curve to remain relevant. This article explores the key trends shaping the future of digital marketing and offers insights into how brands can adapt to thrive in this dynamic era.
@@ -71,7 +71,7 @@ export const articles = [
         readTime: '12 mins',
         author: 'Laura Turner',
         category: Categories[1],
-        pablished: '01-29-2024',
+        published: '01-29-2024',
         illustration: { full: imgF02, middle: imgMi02, mobile: imgMo02 },
         contain: ``
     },
@@ -81,7 +81,7 @@ export const articles = [
         readTime: '14 mins',
         author: 'Laura Turner',
         category: Categories[2],
-        pablished: '02-16-2024',
+        published: '02-16-2024',
         illustration: { full: imgF03, middle: imgMi03, mobile: imgMo03 },
         contain: ``
     },
@@ -91,7 +91,7 @@ export const articles = [
         readTime: '7 mins',
         author: 'Laura Turner',
         category: Categories[2],
-        pablished: '04-21-2024',
+        published: '04-21-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },
@@ -101,7 +101,7 @@ export const articles = [
         readTime: '6 mins',
         author: 'Laura Turner',
         category: Categories[1],
-        pablished: '05-05-2024',
+        published: '05-05-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },
@@ -111,7 +111,7 @@ export const articles = [
         readTime: '6 mins',
         author: 'Laura Turner',
         category: Categories[2],
-        pablished: '06-11-2024',
+        published: '06-11-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },
@@ -121,7 +121,7 @@ export const articles = [
         readTime: '9 mins',
         author: 'Laura Turner',
         category: Categories[2],
-        pablished: '07-17-2024',
+        published: '07-17-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },
@@ -131,7 +131,7 @@ export const articles = [
         readTime: '8 mins',
         author: 'Laura Turner',
         category: Categories[0],
-        pablished: '07-17-2024',
+        published: '07-17-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },
@@ -141,7 +141,7 @@ export const articles = [
         readTime: '11 mins',
         author: 'Laura Turner',
         category: Categories[1],
-        pablished: '08-19-2024',
+        published: '08-19-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },
@@ -151,7 +151,7 @@ export const articles = [
         readTime: '9 mins',
         author: 'Laura Turner',
         category: Categories[1],
-        pablished: '09-22-2024',
+        published: '09-22-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },
@@ -161,7 +161,7 @@ export const articles = [
         readTime: '7 mins',
         author: 'Laura Turner',
         category: Categories[0],
-        pablished: '10-16-2024',
+        published: '10-16-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },
@@ -171,7 +171,7 @@ export const articles = [
         readTime: '8 mins',
         author: 'Laura Turner',
         category: Categories[0],
-        pablished: '11-29-2024',
+        published: '11-29-2024',
         illustration: { full: imgFull01 },
         contain: ``
     },

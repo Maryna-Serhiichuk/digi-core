@@ -7,5 +7,5 @@ export interface ArticlePreviewArgs {
     readTime: string
     author: string
     contain: string
-    pablished: string
+    published: string
 }

@@ -12,7 +12,7 @@ const PictureView = styled(Row)`
     ${responsiveSize('height', 380, 200, 200)}
 `
 
-export const ArticlePreviewShort: FC<ArticlePreviewArgs> = ({ illustration, title, category, readTime, author, contain, pablished }) => {
+export const ArticlePreviewShort: FC<ArticlePreviewArgs> = ({ illustration, title, category, readTime, author, contain }) => {
     return <ContainerBg xs={24} sm={24} md={12} lg={8}>
         <PictureView>
             <Picture {...illustration}/>

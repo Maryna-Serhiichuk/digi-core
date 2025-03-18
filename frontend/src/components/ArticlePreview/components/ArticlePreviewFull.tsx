@@ -1,13 +1,13 @@
 import { FC, Fragment } from "react";
 import { Col, Flex, Row, Space, Typography } from "antd";
 import styled from "@emotion/styled";
-import dayjs from 'dayjs'
 import { ContainerBg } from "@/components/ContainerBg";
 import { Picture } from "@/components/Picture";
 import { Padding } from "@/components/Padding";
 import { Tag } from "@/components/Tag";
 import { DarkArrowButton } from "@/components/DarkArrowButton";
 import { ArticlePreviewArgs } from ".";
+import { dateFormater } from "@/utils/dateFormater";
 
 const SpaceBetween = styled(Col)`
     display: flex;
@@ -16,7 +16,7 @@ const SpaceBetween = styled(Col)`
     gap: 20px;
 `
 
-export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title, category, readTime, author, contain, pablished }) => {
+export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title, category, readTime, author, contain, published }) => {
     return <Fragment>
         <ContainerBg span={8}>
             <Picture {...illustration}/>
@@ -48,14 +48,14 @@ export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title
                             </DarkArrowButton>
                         </Col>
                         <Col>
-                        <Space size={12}>
-                                <Typography.Text>
-                                    Published Date
-                                </Typography.Text>
-                                <Date>
-                                    {dayjs(pablished, 'MM-DD-YYYY').format('D MMMM YYYY')}
-                                </Date>
-                        </Space>
+                            <Space size={12}>
+                                    <Typography.Text>
+                                        Published Date
+                                    </Typography.Text>
+                                    <Date>
+                                        {dateFormater(published)}
+                                    </Date>
+                            </Space>
                         </Col>
                     </Row>
                 </SpaceBetween>

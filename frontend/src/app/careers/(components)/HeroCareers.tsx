@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Flex, Row, Typography } from "antd";
 import { Padding } from "@/components/Padding";
 
-export const HeroSections: FC = () => {
+export const HeroCareers: FC = () => {
     return <Hero
         withoutLine
         titleLine1={'Empower Your'}

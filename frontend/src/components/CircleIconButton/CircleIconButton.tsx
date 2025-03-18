@@ -16,8 +16,8 @@ const Circle = styled(Col)`
     align-items: center;
     width: 52px;
     height: 52px;
-    background: ${({ theme }: any) =>  theme?.token?.colors?.dark[12]};
-    border: 1px solid ${({ theme }: any) =>  theme?.token?.colors?.dark[20]};
+    background: ${({ theme }: any) => theme?.token?.colors?.dark[12]};
+    border: 1px solid ${({ theme }: any) => theme?.token?.colors?.dark[20]};
     border-radius: 50%;
 
     img {
