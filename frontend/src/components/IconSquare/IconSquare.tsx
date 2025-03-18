@@ -18,6 +18,6 @@ const ImageRec = styled(Col)`
 
 export const IconSquare: FC<IconSquareArgs> = ({ icon, alt }) => {
     return <ImageRec>
-        <Image src={icon} alt={alt + "icon"} />
+        <Image width={34} src={icon} alt={alt + "icon"} />
     </ImageRec>
 }

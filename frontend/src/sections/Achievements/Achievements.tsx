@@ -5,7 +5,6 @@ import achievements from '@/data/achievements.json'
 import { ContainerBg } from "@/components/ContainerBg";
 import { Padding } from "@/components/Padding";
 import { Col, Row, Typography } from "antd";
-import { responsiveSize } from "@/utils/responsiveSize";
 
 const Title = styled(Row)`
     background: ${({ theme }: any) => theme?.token?.colors?.dark[15]};

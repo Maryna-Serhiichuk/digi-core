@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import header from '@/data/header.json'
-import { Button, Col, Row, Typography } from "antd";
+import { Button, Col, Row } from "antd";
 import { Logo } from "../Logo";
 import Link from "next/link";
 import { MenuOutlined } from '@ant-design/icons';
