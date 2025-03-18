@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Explore Job Listings",
+        "description": "Visit our website's 'Careers' page to explore the current job openings. Review the available roles and select the position that aligns with your skills, experience, and career goals."
+    },
+    {
+        "title": "Submit Your Application",
+        "description": "Complete the online application form and upload your resume along with any relevant documents. Ensure that your information is accurate and up to date."
+    },
+    {
+        "title": "Initial Screening",
+        "description": "Our recruitment team will review your application to assess your qualifications and experience. If your profile matches the role, you will be contacted for the next step."
+    },
+    {
+        "title": "Interview Process",
+        "description": "Depending on the position, you may go through multiple interview rounds, including technical assessments and discussions with the hiring team to evaluate your suitability."
+    },
+    {
+        "title": "Final Evaluation & Offer",
+        "description": "Once interviews are completed, we will review all candidates and extend an offer to the best fit. You will receive a formal job offer outlining the terms and conditions of employment."
+    },
+    {
+        "title": "Onboarding & Welcome",
+        "description": "After accepting the offer, you will go through the onboarding process, where you'll receive the necessary training, meet your team, and get started in your new role."
+    }
+]

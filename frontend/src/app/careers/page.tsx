@@ -8,6 +8,7 @@ import { Cta } from "@/sections/Cta";
 import { Follow } from "@/sections/Follow";
 import { HeroSections } from "./(components)/HeroServices";
 import { Jobs } from "@/sections/Jobs";
+import { Apply } from "@/sections/Apply";
 
 export default function Projects() {
   return (
@@ -15,7 +16,7 @@ export default function Projects() {
       <Gap>
         <HeroSections/>
         <Jobs/>
-        
+        <Apply/>
         <Testimonials/>
         <Faq/>
         <Cta/>
