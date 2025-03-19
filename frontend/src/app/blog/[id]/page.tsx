@@ -11,12 +11,18 @@ import { useEffect, useState } from "react";
 import { articles } from "@/data/articles/articles";
 import { Article } from "@/sections/Article";
 import { ArticleType } from "@/data/articles";
+import { Related } from "@/sections/Related";
 
 export default function Page({ params }: { params: { id: string } }) {
     const [article, setArticle] = useState<ArticleType>()
-    
+    const [relatedArticles, setRelatedArticles] = useState<Array<ArticleType>>()
+
     useEffect(() => {
-        params?.id && setArticle(articles?.find(article => article?.id === params?.id))
+        const coosen = articles?.find(art => art?.id === params?.id)
+        params?.id && setArticle(coosen)
+
+        setRelatedArticles(articles?.filter(art => art?.category === coosen?.category))
+
     }, [params])
 
     return (
@@ -24,6 +30,7 @@ export default function Page({ params }: { params: { id: string } }) {
         <Gap>
           <HeroArticle article={article}/>
           <Article data={article}/>
+          <Related articles={relatedArticles}/>
           <Testimonials/>
           <Faq/>
           <Cta/>

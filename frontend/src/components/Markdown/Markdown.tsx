@@ -14,17 +14,20 @@ const Title = styled(Typography.Title)`
     }
 `
 
-export const Markdown: FC<{data: string | undefined}> = ({ data }) => {
+export const Markdown: FC<{data: string | undefined, clear?: boolean}> = ({ data, clear = false }) => {
+    
     return <ReactMarkdown components={{
         // img: ({src, alt}) => (src ? <img className={"markdown-image"} src={src} alt={alt}/> : null),
-        // ul: ({children}) => children,
+        // ul: ({children}) => <ul><Typography.Title level={5}>{children}</Typography.Title></ul>,
         // a: ({href, children}) => children,
-        p: ({children}) => <Paragraph>{children}</Paragraph>,
+        p: ({children}) => clear 
+            ? <Typography.Title level={5}>{children}</Typography.Title> 
+            : <Paragraph>{children}</Paragraph>,
         // h1: ({children}) => children,
-        h2: ({children}) => <Typography.Title level={2}>{children}</Typography.Title>,
-        h3: ({children}) => <Title level={3}>{children}</Title>,
+        h2: ({children}) => clear ? '' : <Typography.Title level={2}>{children}</Typography.Title>,
+        h3: ({children}) => clear ? '' : <Title level={3}>{children}</Title>,
         // h4: ({children}) => children,
         // li: ({children}) => children,
         // strong: ({children}) => children
-      }}>{data}</ReactMarkdown>
+    }}>{data}</ReactMarkdown>
 }

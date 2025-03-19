@@ -33,7 +33,7 @@ export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title
                         <Row gutter={[20, 20]}>
                             <Tag name={'Category'} value={category} />
                             <Tag name={'Read Time'} value={readTime} />
-                            <Tag name={'Author'} value={author} />
+                            <Tag name={'Author'} value={author?.fullName} />
                         </Row>
                     </Flex>
                     <Row>

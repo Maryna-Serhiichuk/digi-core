@@ -1,13 +1,13 @@
 import { Section } from "@/components/Section";
 import { FC, useState } from "react";
-import { articles, Categories } from "@/data/articles/articles";
+import { articles } from "@/data/articles/articles";
 import { ArticlePreview } from "@/components/ArticlePreview";
 import { Grid } from "antd";
 
 const array = [
-    { key: Categories[0], label: 'Business' },
-    { key: Categories[1], label: 'Development' },
-    { key: Categories[2], label: 'Design' },
+    { key: 'Business', label: 'Business' },
+    { key: 'Development', label: 'Development' },
+    { key: 'Design', label: 'Design' },
 ]
 
 export const Articles: FC = () => {
