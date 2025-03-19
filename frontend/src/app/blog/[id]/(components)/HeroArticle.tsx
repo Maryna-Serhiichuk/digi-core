@@ -4,19 +4,20 @@ import { Hero } from "@/components/Hero";
 import { Padding } from "@/components/Padding";
 import { Badge, BadgeArgs } from "@/components/Badge";
 import { dateFormater } from "@/utils/dateFormater";
+import { ArticleType } from "@/data/articles";
 
-export const HeroArticle: FC<HeroArticleArgs> = ({ author, published, category, readTime }) => {
+export const HeroArticle: FC<{ article: ArticleType | undefined }> = ({ article }) => {
     const articleDescription: Array<BadgeArgs> = [
-        { name: 'Author', value: author },
-        { name: 'Published', value: dateFormater(published) },
-        { name: 'Category', value: category },
-        { name: 'Read Time', value: readTime },
-    ]
+        { name: 'Author', value: article?.author?.fullName },
+        { name: 'Published', value: dateFormater(article?.published) },
+        { name: 'Category', value: article?.category },
+        { name: 'Read Time', value: article?.readTime },
+    ]?.filter(it => it?.value)
 
     return <Hero
         withoutLine
-        titleLine1={'Mastering the Art'}
-        titleLine2={'of Minimalistic Design'}
+        titleLine1={article?.title?.split(' ', 3)?. join(' ') ?? ''}
+        titleLine2={article?.title?.split(' ')?.slice(3)?.join(' ')}
     >
         <Padding inlineSize={'small'} blockSize={'small'}>
             <Col span={24}>

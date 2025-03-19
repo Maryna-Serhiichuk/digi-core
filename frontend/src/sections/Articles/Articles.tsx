@@ -1,6 +1,6 @@
 import { Section } from "@/components/Section";
 import { FC, useState } from "react";
-import { articles, Categories } from "@/data/articles";
+import { articles, Categories } from "@/data/articles/articles";
 import { ArticlePreview } from "@/components/ArticlePreview";
 import { Grid } from "antd";
 

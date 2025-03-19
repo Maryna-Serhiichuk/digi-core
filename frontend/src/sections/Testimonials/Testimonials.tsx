@@ -6,6 +6,7 @@ import { Avatar, Col, Row, Space, Typography } from "antd";
 import { FC } from "react";
 import styled from "@emotion/styled"
 import { responsiveSize } from "@/utils/responsiveSize";
+import { Member } from "@/components/Member";
 
 const Title = styled(Typography.Title)`
     && {
@@ -19,12 +20,7 @@ const Light = styled(Row)`
     background: ${({ theme }: any) => theme?.token?.colors?.dark[12]};
 `
 
-const Person = styled(Typography.Title)`
-    && {
-        ${responsiveSize('font-size', 26, 16, 14)}
-        white-space: nowrap;
-    }
-`
+
 
 export const Testimonials: FC = () => {
     return <Section label={"Testimonials"}>
@@ -47,19 +43,7 @@ export const Testimonials: FC = () => {
                 <Light wrap={false}>
                     <Padding inlineSize={'small'} blockSize={30}>
                         <Col>
-                            <Space size={12}>
-                                <Col>
-                                    <Avatar size={60} src={testimonial?.member?.image?.src} />
-                                </Col>
-                                <Col>
-                                    <Person level={5}>
-                                        {testimonial?.member?.fullName}
-                                    </Person>
-                                    <Person level={4}>
-                                        {testimonial?.member?.position}
-                                    </Person>
-                                </Col>
-                            </Space>
+                            <Member data={testimonial?.member}/>
                         </Col>
                         {/* <Col>
                             arrow

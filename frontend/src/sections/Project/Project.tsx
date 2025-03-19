@@ -6,10 +6,10 @@ import { Padding } from "@/components/Padding";
 import { Picture, PictureArgs } from "@/components/Picture";
 import { Tag } from "@/components/Tag";
 import { Avatar, Button, Col, Row, Space, Typography } from "antd";
-import { StaticImageData } from "next/image";
 import { FC } from "react";
 import styled from "@emotion/styled"
 import { ProjectHead } from "@/components/ProjectHead";
+import { MemberType } from "@/data/members/members";
 
 export interface ProjectArgs extends IconSquareLabelArgs {
     description: string
@@ -17,13 +17,19 @@ export interface ProjectArgs extends IconSquareLabelArgs {
     time: string
     technologies: string[]
     image: PictureArgs
-    members: StaticImageData[]
+    members: MemberType[]
 }
 
 const UpperTitle = styled(Typography.Title)`
     text-transform: uppercase;
     && {
         color: ${({ theme }: any) => theme?.token?.colors?.absolute?.text};
+    }
+`
+
+const Images = styled(Avatar)`
+    img {
+        background: #E7BEB1;
     }
 `
 
@@ -73,7 +79,7 @@ export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, t
                                     <Col>
                                         <Space size={10}>
                                             {members?.map(member => (
-                                                <Avatar key={member?.src} size={50} src={member?.src}/>
+                                                <Images key={member?.photo?.src} size={50} src={member?.photo?.src}/>
                                             ))}
                                         </Space>
                                     </Col>

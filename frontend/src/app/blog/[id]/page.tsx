@@ -8,25 +8,22 @@ import { Testimonials } from "@/sections/Testimonials";
 import { Col } from "antd";
 import { HeroArticle } from "./(components)/HeroArticle";
 import { useEffect, useState } from "react";
-import { articles } from "@/data/articles";
+import { articles } from "@/data/articles/articles";
+import { Article } from "@/sections/Article";
+import { ArticleType } from "@/data/articles";
 
-export default function Article({ params }: { params: { id: string } }) {
-    const [article, setArticle] = useState<HeroArticleArgs>()
+export default function Page({ params }: { params: { id: string } }) {
+    const [article, setArticle] = useState<ArticleType>()
     
     useEffect(() => {
-        const articleInfo = articles?.find(article => article?.id === params?.id)
-        params?.id && setArticle({ 
-            category: articleInfo?.category,
-            readTime: articleInfo?.readTime,
-            published: articleInfo?.published,
-            author: articleInfo?.author
-        })
+        params?.id && setArticle(articles?.find(article => article?.id === params?.id))
     }, [params])
 
     return (
       <Col span={24}>
         <Gap>
-          <HeroArticle {...article}/>
+          <HeroArticle article={article}/>
+          <Article data={article}/>
           <Testimonials/>
           <Faq/>
           <Cta/>

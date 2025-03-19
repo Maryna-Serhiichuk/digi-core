@@ -1,5 +1,3 @@
-import array from '@/data/our-works.json'
-
 import star from '@/sources/icons/star.svg'
 import balloon from '@/sources/icons/balloon.svg'
 
@@ -11,38 +9,54 @@ import lightYellowFull from '@/sources/light-yellow/full.jpg'
 import lightYellowMid from '@/sources/light-yellow/middle.jpg'
 import lightYellowMob from '@/sources/light-yellow/mob.jpg'
 
-import member1 from '@/sources/members/01.jpg'
-import member2 from '@/sources/members/02.jpg'
-import member3 from '@/sources/members/03.jpg'
-import member4 from '@/sources/members/04.jpg'
-import member5 from '@/sources/members/05.jpg'
-import member6 from '@/sources/members/06.jpg'
-import member7 from '@/sources/members/07.jpg'
-import member8 from '@/sources/members/08.jpg'
-import member9 from '@/sources/members/09.jpg'
+import { getMembers, MemberType } from './members/members'
+import { StaticImageData } from 'next/image'
+import { PictureArgs } from '@/components/Picture'
 
-const icons = [
-    star,
-    balloon
-]
+interface OurWorksType {
+    id: string
+    title: string
+    description: string
+    category: string
+    time: string
+    technologies: string[]
+    icon: StaticImageData
+    image: PictureArgs
+    members: MemberType[]
+}
 
-const images = [
+interface OurWorksTypeIds extends Omit<OurWorksType, 'members'> {
+    members: string[]
+}
+
+const ourWorksPrevent: Array<OurWorksTypeIds> = [
     {
-        full: lightPurpleFull,
-        middle: lightPurpleMid,
-        mob: lightPurpleMob
+        id: '1',
+        title: "Zenith Fitness App",
+        description: "An all-in-one health and wellness app that offers personalized fitness plans, nutrition guidance, and virtual workout classes.",
+        category: "Mobile App Development",
+        time: "6 months",
+        technologies: ["React Native", "Firebase", "Redux", "REST API", "MongoDB"],
+        icon: star,
+        image: { full: lightPurpleFull,middle: lightPurpleMid, mobile: lightPurpleMob },
+        members: ["5", "8", "9", "10", "12"]
     },
     {
-        full: lightYellowFull,
-        middle: lightYellowMid,
-        mob: lightYellowMob
-    },
+        id: '2',
+        title: "A-Aura Ecommerce",
+        description: "A complete overhaul of a corporate website to enhance its brand identity and user experience.",
+        category: "Web Design & Development",
+        time: "3 months",
+        technologies: ["WordPress", "PHP", "HTML5", "CSS3", "JavaScript"],
+        icon: balloon,
+        image: { full: lightYellowFull, middle: lightYellowMid, mobile: lightYellowMob },
+        members: ["5", "7", "8", "10", "13"]
+    }
 ]
 
-const members = [
-    member1, member2, member3,
-    member4, member5, member6,
-    member7, member8, member9
-]
 
-export const ourWorks = array?.map(({ members: ms, ...item }, index) => ({ ...item, icon: icons[index], image: images[index], members: ms?.map(it => members[it]) }))
+
+export const ourWorks = ourWorksPrevent?.map(({ members: ms, ...item }) => ({ 
+    ...item,
+    members: getMembers(ms)
+}))
