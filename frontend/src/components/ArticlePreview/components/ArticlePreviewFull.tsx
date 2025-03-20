@@ -8,12 +8,21 @@ import { Tag } from "@/components/Tag";
 import { DarkArrowButton } from "@/components/DarkArrowButton";
 import { ArticlePreviewArgs } from ".";
 import { dateFormater } from "@/utils/dateFormater";
+import { responsiveSize } from "@/utils/responsiveSize";
 
 const SpaceBetween = styled(Col)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
+`
+
+const Published = styled(Typography.Text)`
+    && {
+        ${responsiveSize('font-size', 20,18,16)}
+        text-transform: uppercase;
+        color: white;
+    }
 `
 
 export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title, category, readTime, author, contain, published }) => {
@@ -52,9 +61,9 @@ export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title
                                     <Typography.Text>
                                         Published Date
                                     </Typography.Text>
-                                    <Date>
+                                    <Published>
                                         {dateFormater(published)}
-                                    </Date>
+                                    </Published>
                             </Space>
                         </Col>
                     </Row>
