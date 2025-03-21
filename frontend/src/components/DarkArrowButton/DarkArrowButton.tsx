@@ -1,10 +1,11 @@
 import { FC, PropsWithChildren } from "react";
-import styled from "@emotion/styled"
 import { Col, Row, Typography } from "antd";
-import { ArrowCircle, ArrowCircleArgs } from "../ArrowCircle";
-import { ArrowCircleHover } from "../ArrowCircle/ArrowCircleHover";
+import styled from "@emotion/styled"
+import { ArrowCircle, ArrowCircleArgs } from "@/components/ArrowCircle";
+import { ArrowCircleHover } from "@/components/ArrowCircle/ArrowCircleHover";
+import { NavLink, NavLinkArgs } from "@/components/NavLink";
 
-export interface DarkArrowButtonArgs extends PropsWithChildren<ArrowCircleArgs>, ArrowCircleArgs {}
+export interface DarkArrowButtonArgs extends PropsWithChildren<ArrowCircleArgs>, ArrowCircleArgs, NavLinkArgs {}
 
 const Hover = styled(ArrowCircleHover)`
     cursor: pointer;
@@ -29,15 +30,17 @@ const Hover = styled(ArrowCircleHover)`
     }
 `
 
-export const DarkArrowButton: FC<PropsWithChildren<ArrowCircleArgs>> = ({ children, rotate, color }) => {
-    return <Hover wrap={false} align={'middle'} justify={'center'}>
-        <ArrowCircle rotate={rotate} color={color} />
-        <Col className="dark-arrow-button-text">
-            <Row align={'middle'}>
-                <Typography.Title level={4}>
-                    {children}
-                </Typography.Title>
-            </Row>
-        </Col>
-    </Hover>
+export const DarkArrowButton: FC<PropsWithChildren<DarkArrowButtonArgs>> = ({ children, rotate, color, href }) => {
+    return <NavLink href={href}>
+        <Hover wrap={false} align={'middle'} justify={'center'}>
+            <ArrowCircle rotate={rotate} color={color} />
+            <Col className="dark-arrow-button-text">
+                <Row align={'middle'}>
+                    <Typography.Title level={4}>
+                        {children}
+                    </Typography.Title>
+                </Row>
+            </Col>
+        </Hover>
+    </NavLink>
 }

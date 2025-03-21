@@ -9,6 +9,7 @@ import { IconSquare } from "@/components/IconSquare";
 import { Padding } from "@/components/Padding";
 import { responsiveSize } from "@/utils/responsiveSize";
 import { socials } from "@/data/socials";
+import Link from "next/link";
 
 const Text = styled(Row)`
     ${responsiveSize('margin-top', 80, 50, 30)}
@@ -22,34 +23,36 @@ export const Socials: FC = () => {
     return <Gap>
         {socials?.map(social => (
             <ContainerBg key={social?.name} span={12}>
-                <ArrowCircleHover>
-                    <Padding blockSize={'small'} inlineSize={'small'}>
-                        <Col span={24}>
-                            <Row justify={'space-between'}>
-                                <Col>
-                                    <IconSquare icon={social?.icon} alt={social?.name}/>
-                                </Col>
-                                <Col>
-                                    <ArrowCircle color={'ghost'}/>
-                                </Col>
-                            </Row>
-                            <Text>
-                                <Col>
-                                    <Row>
-                                        <Typography.Title level={3}>
-                                            {social?.name}
-                                        </Typography.Title>
-                                    </Row>
-                                    <Description>
-                                        <Typography.Title level={5}>
-                                            {social?.description}
-                                        </Typography.Title>
-                                    </Description>
-                                </Col>
-                            </Text>
-                        </Col>
-                    </Padding>
-                </ArrowCircleHover>
+                <Link href={social?.href}>
+                    <ArrowCircleHover>
+                        <Padding blockSize={'small'} inlineSize={'small'}>
+                            <Col span={24}>
+                                <Row justify={'space-between'}>
+                                    <Col>
+                                        <IconSquare icon={social?.icon} alt={social?.name}/>
+                                    </Col>
+                                    <Col>
+                                        <ArrowCircle color={'ghost'}/>
+                                    </Col>
+                                </Row>
+                                <Text>
+                                    <Col>
+                                        <Row>
+                                            <Typography.Title level={3}>
+                                                {social?.name}
+                                            </Typography.Title>
+                                        </Row>
+                                        <Description>
+                                            <Typography.Title level={5}>
+                                                {social?.description}
+                                            </Typography.Title>
+                                        </Description>
+                                    </Col>
+                                </Text>
+                            </Col>
+                        </Padding>
+                    </ArrowCircleHover>
+                </Link>
             </ContainerBg>
         ))}
     </Gap>

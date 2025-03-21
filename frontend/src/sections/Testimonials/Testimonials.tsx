@@ -23,7 +23,7 @@ const Light = styled(Row)`
 
 
 export const Testimonials: FC = () => {
-    return <Section label={"Testimonials"}>
+    return <Section label={"Testimonials"} id={'testimonials'}>
         {testimonials?.map(testimonial => (
             <ContainerBg key={testimonial?.title} xs={24} md={12} xl={6}>
                 <Padding inlineSize={'small'} blockSize={'small'}>

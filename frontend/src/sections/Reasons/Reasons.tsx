@@ -38,7 +38,7 @@ export const Reasons: FC = () => {
                             </Row>
                         </Space>
                         <ButtonRow>
-                            <DarkArrowButton>
+                            <DarkArrowButton href={'/projects'}>
                                 Learn More
                             </DarkArrowButton>
                         </ButtonRow>

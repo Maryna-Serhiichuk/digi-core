@@ -7,7 +7,7 @@ import { Ask } from "./components/Ask";
 import { ContainerBg } from "@/components/ContainerBg";
 
 export const Faq: FC = () => {
-    return <Col span={24}>
+    return <Col span={24} id={'faq'}>
         <Gap>
             <Title label={'Freqently asked questions'} />
             <Col sm={24} md={12} xl={14}>

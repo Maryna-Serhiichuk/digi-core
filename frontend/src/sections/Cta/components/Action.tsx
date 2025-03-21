@@ -4,6 +4,7 @@ import { Button, Col, Grid, Row, Typography } from "antd";
 import { FC } from "react";
 import styled from "@emotion/styled"
 import { ArrowUpOutlined } from '@ant-design/icons';
+import Link from "next/link";
 
 const Title = styled(Typography.Title)`
     && {
@@ -31,9 +32,11 @@ export const Action: FC = () => {
                     </Col>
                     <Col xs={24} sm={24} md={8} lg={7} xl={9}>
                         <Row justify={'end'}>
-                            <Button block={!md} iconPosition={'end'} icon={<ArrowUpOutlined rotate={45} />}>
-                                Get in Touch
-                            </Button>
+                            <Link href={'/contact'}>
+                                <Button block={!md} iconPosition={'end'} icon={<ArrowUpOutlined rotate={45} />}>
+                                    Get in Touch
+                                </Button>
+                            </Link>
                         </Row>
                     </Col>
                 </Row>

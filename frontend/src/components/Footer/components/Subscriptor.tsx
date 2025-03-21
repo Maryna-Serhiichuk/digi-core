@@ -1,5 +1,5 @@
 import { Padding } from "@/components/Padding";
-import { Col, Form, Input, Row, Space, Typography } from "antd";
+import { Button, Col, Form, Input, Row, Space, Typography } from "antd";
 import { FC } from "react";
 import styled from "@emotion/styled"
 import { ArrowCircle } from "@/components/ArrowCircle";
@@ -17,6 +17,12 @@ const Item = styled(Form.Item)`
     margin: 0;
     max-width: 100%;
     width: 350px;
+`
+
+const DefaultButton = styled('button')`
+    background: transparent;
+    border: none;
+    cursor: pointer;
 `
 
 export const Subscriptor: FC = () => {
@@ -38,18 +44,20 @@ export const Subscriptor: FC = () => {
                     </Space>
                 </Col>
                 <Col>
-                    <Row wrap={false} gutter={[15, 0]} align={'middle'} justify={'space-between'}>
-                        <Col>
-                            <Form>
-                                <Item>
+                    <Form onFinish={e => console.log(e)}>
+                        <Row wrap={false} gutter={[15, 0]} align={'middle'} justify={'space-between'}>
+                            <Col>
+                                <Item name={'email'} rules={[{ type: 'email', required: true }]}>
                                     <Email placeholder={'your.email@gmail.com'}/>
                                 </Item>
-                            </Form>
-                        </Col>
-                        <Col>
-                            <ArrowCircle color={'ghost'}/>
-                        </Col>
-                    </Row>
+                            </Col>
+                            <Col>
+                                <DefaultButton type={'submit'}>
+                                    <ArrowCircle color={'ghost'}/>
+                                </DefaultButton>
+                            </Col>
+                        </Row>
+                    </Form>
                 </Col>
             </Row>
         </Col>

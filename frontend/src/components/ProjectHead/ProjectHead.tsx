@@ -34,7 +34,7 @@ export const ProjectHead: FC<ProjectHeadArgs> = ({ tags, description, icon, titl
                         <IconSquareLabel icon={icon} title={title} />
                     </Col>
                     <Col hidden={xs}>
-                        <DarkArrowButton color={'ghost'}>
+                        <DarkArrowButton color={'ghost'} href={'/projects'}>
                             Details
                         </DarkArrowButton>
                     </Col>
@@ -56,7 +56,7 @@ export const ProjectHead: FC<ProjectHeadArgs> = ({ tags, description, icon, titl
                 {xs && 
                     <Row>
                         <Col>
-                            <DarkArrowButton>
+                            <DarkArrowButton href={'projects'}>
                                 Details
                             </DarkArrowButton>
                         </Col>

@@ -9,6 +9,8 @@ import { DarkArrowButton } from "@/components/DarkArrowButton";
 import { ArticlePreviewArgs } from ".";
 import { dateFormater } from "@/utils/dateFormater";
 import { responsiveSize } from "@/utils/responsiveSize";
+import { Markdown } from "@/components/Markdown";
+import Link from "next/link";
 
 const SpaceBetween = styled(Col)`
     display: flex;
@@ -25,7 +27,7 @@ const Published = styled(Typography.Text)`
     }
 `
 
-export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title, category, readTime, author, contain, published }) => {
+export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ id, illustration, title, category, readTime, author, contain, published }) => {
     return <Fragment>
         <ContainerBg span={8}>
             <Picture {...illustration}/>
@@ -35,9 +37,11 @@ export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title
                 <SpaceBetween span={24}>
                     <Flex vertical gap={20}>
                         <Row>
-                            <Typography.Title level={3}>
-                                {title}
-                            </Typography.Title>
+                            <Link href={`blog/${id}`}>
+                                <Typography.Title level={3}>
+                                    {title}
+                                </Typography.Title>
+                            </Link>
                         </Row>
                         <Row gutter={[20, 20]}>
                             <Tag name={'Category'} value={category} />
@@ -47,23 +51,23 @@ export const ArticlePreviewFull: FC<ArticlePreviewArgs> = ({ illustration, title
                     </Flex>
                     <Row>
                         <Typography.Text>
-                            {contain?.slice(0, 300)}...
+                            <Markdown data={`${contain?.slice(0, 300)}...`} clear/>
                         </Typography.Text>
                     </Row>
                     <Row align={'middle'} justify={'space-between'}>
                         <Col>
-                            <DarkArrowButton color={'ghost'}>
+                            <DarkArrowButton color={'ghost'} href={`blog/${id}`}>
                                 Read Full Article
                             </DarkArrowButton>
                         </Col>
                         <Col>
                             <Space size={12}>
-                                    <Typography.Text>
-                                        Published Date
-                                    </Typography.Text>
-                                    <Published>
-                                        {dateFormater(published)}
-                                    </Published>
+                                <Typography.Text>
+                                    Published Date
+                                </Typography.Text>
+                                <Published>
+                                    {dateFormater(published)}
+                                </Published>
                             </Space>
                         </Col>
                     </Row>

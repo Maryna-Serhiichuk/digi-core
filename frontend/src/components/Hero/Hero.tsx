@@ -10,6 +10,7 @@ import { Head, HeadArgs, HeroNav, HeroNavArrow } from "@/components/Hero/compone
 import { Picture, PictureArgs } from "@/components/Picture";
 import lineWords from '@/data/services.json'
 import { DarkArrowButton } from "../DarkArrowButton";
+import Link from "next/link";
 
 interface HeroArgs extends HeadArgs {
     main?: boolean
@@ -66,15 +67,14 @@ export const Hero: FC<PropsWithChildren<HeroArgs>> = ({ children, main = false, 
                                 <Padding inlineSize={'small'}>
                                     <Col span={24}>
                                         <Row justify={'space-between'}>
-                                            <DarkArrowButton color={'light'}>
+                                            <DarkArrowButton color={'light'} href={'blog'}>
                                                 View Blog
                                             </DarkArrowButton>
-                                            <Button 
-                                                ghost
-                                                type={'default'}
-                                            >
-                                                Web development
-                                            </Button>
+                                            <Link href={'web-development'}>
+                                                <Button ghost type={'default'}>
+                                                    Web development
+                                                </Button>
+                                            </Link>
                                         </Row>
                                     </Col>
                                 </Padding>

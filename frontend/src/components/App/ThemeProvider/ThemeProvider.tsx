@@ -5,7 +5,7 @@ import { ConfigProvider, Grid } from 'antd';
 import { Roboto_Mono, Roboto_Flex } from 'next/font/google'
 import EmotionProvider from '../EmotionProvider';
 import { responsiveSize } from '@/utils/responsiveSize';
-import { ColorsType, ThemeConfig } from '@/components/types/theme';
+import { ColorsType, ThemeConfig } from '@/types/theme';
 
 const robotoMono = Roboto_Mono({
     weight: ['400', '500', '700'],

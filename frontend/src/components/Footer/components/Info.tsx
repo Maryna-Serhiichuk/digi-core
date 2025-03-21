@@ -15,14 +15,14 @@ export const Info: FC = () => {
                 <Col>
                     <Row gutter={[25, 0]}>
                         <Col>
-                            <Link href={'terms'}>
+                            <Link href={'/terms'}>
                                 <Typography.Title level={5}>
                                     Terms & Conditions
                                 </Typography.Title>
                             </Link>
                         </Col>
                         <Col>
-                            <Link href={'privacy'}>
+                            <Link href={'/privacy-policy'}>
                                 <Typography.Title level={5}>
                                     Privacy Policy
                                 </Typography.Title>

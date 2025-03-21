@@ -1,18 +1,22 @@
 [
     {
         "name": "Instagram",
-        "description": "Share visually appealing snippets of our latest web projects."
+        "description": "Share visually appealing snippets of our latest web projects.",
+        "href": "https://instagram.com"
     },
     {
         "name": "Twitter",
-        "description": "Tweet about interesting coding challenges you've overcome."
+        "description": "Tweet about interesting coding challenges you've overcome.",
+        "href": "https://twitter.com"
     },
     {
         "name": "Dribbble",
-        "description": "Showcase design elements of our web projects."
+        "description": "Showcase design elements of our web projects.",
+        "href": "https://dribbble.com"
     },
     {
         "name": "Behance",
-        "description": "Create detailed presentations for our projects."
+        "description": "Create detailed presentations for our projects.",
+        "href": "https://behance.net"
     }
 ]

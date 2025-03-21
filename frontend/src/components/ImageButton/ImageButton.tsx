@@ -37,7 +37,7 @@ export const ImageButton: FC<ImageButtonArgs> = ({ link, ...pictureArgs }) => {
     return <Container>
         <Picture {...pictureArgs} />
         <Link>
-            <DarkArrowButton color={'light'}>
+            <DarkArrowButton color={'light'} href={'/projects'}>
                 Open {xl ? 'Project' : ''}
             </DarkArrowButton>
         </Link>

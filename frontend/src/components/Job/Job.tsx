@@ -5,6 +5,7 @@ import { Padding } from "@/components/Padding";
 import { IconSquareLabel, IconSquareLabelArgs } from "@/components/IconSquareLabel";
 import { DarkArrowButton } from "@/components/DarkArrowButton";
 import { Tag } from "@/components/Tag";
+import Link from "next/link";
 
 interface JobArgs extends IconSquareLabelArgs {
     id: string
@@ -21,10 +22,12 @@ export const Job: FC<JobArgs> = ({ id, icon, title, salary, experience, deadline
                 <Flex vertical gap={30}>
                     <Row align={'middle'} justify={'space-between'} wrap={false}>
                         <Col>
-                            <IconSquareLabel icon={icon} title={title}/>
+                            <Link href={'job/id'}>
+                                <IconSquareLabel icon={icon} title={title}/>
+                            </Link>
                         </Col>
                         <Col>
-                            <DarkArrowButton>
+                            <DarkArrowButton href={'job/id'}>
                                 View Details
                             </DarkArrowButton>
                         </Col>
@@ -47,11 +50,13 @@ export const Job: FC<JobArgs> = ({ id, icon, title, salary, experience, deadline
                         </Flex>
                     </Row>
                 }
-                <Row>
-                    <Button block type={'primary'}>
-                        Apply Now
-                    </Button>
-                </Row>
+                <Link href={'job/id'}>
+                    <Row>
+                        <Button block type={'primary'}>
+                            Apply Now
+                        </Button>
+                    </Row>
+                </Link>
             </Flex>
         </Padding>
     </ContainerBg>

@@ -1,9 +1,9 @@
-import { Padding } from "@/components/Padding";
-import { Button, Col, Divider, Row, Space, Typography } from "antd";
 import { FC } from "react";
+import { Col, Divider, Row, Typography } from "antd";
 import styled from "@emotion/styled"
 import { responsiveSize } from "@/utils/responsiveSize";
 import { AskForm } from "./Ask.form";
+import { Padding } from "@/components/Padding";
 
 
 const Line = styled(Divider)`
@@ -20,18 +20,7 @@ export const Ask: FC = () => {
                 </Typography.Title>
             </Row>
             <Line/>
-            <Space size={50} direction={'vertical'} style={{ width: '100%' }}>
-                <Row>
-                    <Col span={24}>
-                        <AskForm/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Button type={'primary'} block>
-                        Send your message
-                    </Button>
-                </Row>
-            </Space>
+            <AskForm/>
         </Col>
     </Padding>
 }

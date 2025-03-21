@@ -1,5 +1,6 @@
-import { NavLink } from "./NavLink";
+import { NavLink, type NavLinkArgs } from "./NavLink";
 
 export {
-    NavLink
+    NavLink,
+    NavLinkArgs
 }

@@ -1,3 +1,7 @@
+import { FC } from "react";
+import { Avatar, Button, Col, Row, Space, Typography } from "antd";
+import Link from "next/link";
+import styled from "@emotion/styled"
 import { Border } from "@/components/Border";
 import { ContainerBg } from "@/components/ContainerBg";
 import { Gap } from "@/components/Gap";
@@ -5,11 +9,8 @@ import { IconSquareLabelArgs } from "@/components/IconSquareLabel";
 import { Padding } from "@/components/Padding";
 import { Picture, PictureArgs } from "@/components/Picture";
 import { Tag } from "@/components/Tag";
-import { Avatar, Button, Col, Row, Space, Typography } from "antd";
-import { FC } from "react";
-import styled from "@emotion/styled"
 import { ProjectHead } from "@/components/ProjectHead";
-import { MemberType } from "@/data/members/members";
+
 
 export interface ProjectArgs extends IconSquareLabelArgs {
     description: string
@@ -87,9 +88,11 @@ export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, t
                             </Padding>
                         </ContainerBg>
                         <ContainerBg span={24}>
-                            <Button type={'primary'}>
-                                Book a Call
-                            </Button>
+                            <Link href={'/contact'}>
+                                <Button type={'primary'} block>
+                                    Book a Call
+                                </Button>
+                            </Link>
                         </ContainerBg>
                     </Gap>
                 </Col>

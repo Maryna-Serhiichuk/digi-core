@@ -8,12 +8,13 @@ import { DarkArrowButton } from "@/components/DarkArrowButton";
 import { responsiveSize } from "@/utils/responsiveSize";
 import { ArticlePreviewArgs } from ".";
 import { Markdown } from "@/components/Markdown";
+import Link from "next/link";
 
 const PictureView = styled(Row)`
     ${responsiveSize('height', 380, 200, 200)}
 `
 
-export const ArticlePreviewShort: FC<ArticlePreviewArgs> = ({ illustration, title, category, readTime, author, contain }) => {
+export const ArticlePreviewShort: FC<ArticlePreviewArgs> = ({ id, illustration, title, category, readTime, author, contain }) => {
     return <ContainerBg xs={24} sm={24} md={12} lg={8}>
         <PictureView>
             <Picture {...illustration}/>
@@ -23,16 +24,18 @@ export const ArticlePreviewShort: FC<ArticlePreviewArgs> = ({ illustration, titl
                 <Flex vertical gap={50} justify={'space-between'} style={{ height: '100%' }}>
                     <Flex vertical gap={12}>
                         <Row>
-                            <Typography.Title level={3}>
-                                {title}
-                            </Typography.Title>
+                            <Link href={`blog/${id}`}>
+                                <Typography.Title level={3}>
+                                    {title}
+                                </Typography.Title>
+                            </Link>
                         </Row>
                         <Row>
                             <Markdown data={`${contain?.slice(0, 170)}...`} clear/>
                         </Row>
                     </Flex>
                     <Row>
-                        <DarkArrowButton color={'ghost'}>
+                        <DarkArrowButton color={'ghost'} href={`blog/${id}`}>
                             Read Full Article
                         </DarkArrowButton>
                     </Row>

@@ -39,7 +39,7 @@ export const IconDescription: FC<IconDescriptionArgs> = ({ icon, title, descript
                                 <IconSquareLabel icon={icon} title={title}/>
                             </Col>
                             <Col hidden={!sm}>
-                                <DarkArrowButton color={'ghost'}>
+                                <DarkArrowButton color={'ghost'} href={'/services'}>
                                     {xl ? 'Book a call' : ''}
                                 </DarkArrowButton>
                             </Col>
@@ -52,7 +52,7 @@ export const IconDescription: FC<IconDescriptionArgs> = ({ icon, title, descript
                     </SpaceBetween>
                     <Row justify={sm ? 'end' : 'start'}>
                         {!sm
-                            ? <DarkArrowButton color={'ghost'}>
+                            ? <DarkArrowButton color={'ghost'} href={'/services'}>
                                 Learn More
                             </DarkArrowButton>
                             : <Typography.Title level={3}>
@@ -74,7 +74,7 @@ export const IconDescription: FC<IconDescriptionArgs> = ({ icon, title, descript
                                 </Typography.Title>
                             </Col>
                             <Col>
-                                <DarkArrowButton color={'ghost'}>
+                                <DarkArrowButton color={'ghost'} href={'/services'}>
                                     View all
                                 </DarkArrowButton>
                             </Col>

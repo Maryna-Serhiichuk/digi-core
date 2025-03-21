@@ -4,19 +4,19 @@
         "links": [
             {
                 "label": "Why Us",
-                "link": "/"
+                "link": "/about"
             },
             {
                 "label": "About Us",
-                "link": "/about-us"
+                "link": "/about"
             },
             {
-                "label": "Testimotials",
-                "link": "/testimotials"
+                "label": "Testimonials",
+                "link": "#testimonials"
             },
             {
                 "label": "FAQ's",
-                "link": "/faq"
+                "link": "#faq"
             }
         ]
     },
@@ -37,7 +37,7 @@
             },
             {
                 "label": "Digital Marketing",
-                "link": "/faq"
+                "link": "/"
             }
         ]
     },

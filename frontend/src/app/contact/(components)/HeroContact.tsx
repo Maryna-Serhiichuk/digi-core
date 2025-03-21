@@ -1,8 +1,8 @@
 import { Hero } from "@/components/Hero";
 import { FC } from "react";
-import full from "@/sources/hero-about/full.jpg"
-import middle from "@/sources/hero-about/middle.jpg"
-import mobile from "@/sources/hero-about/mob.jpg"
+import full from "@/sources/blog/01/full.jpg"
+import middle from "@/sources/blog/01/middle.jpg"
+import mobile from "@/sources/blog/01/mobile.jpg"
 
 export const HeroContact: FC = () => {
     return <Hero

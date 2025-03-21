@@ -3,6 +3,7 @@ import { FC } from "react";
 import styled from "@emotion/styled"
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { responsiveSize } from "@/utils/responsiveSize";
+import Link from "next/link";
 
 const Button = styled(Row)`
     overflow: hidden;
@@ -99,25 +100,28 @@ const Background = styled(Col)`
 
     svg {
         font-size: 20px;
+        color: black;
     }
 `
 
-export const StartButton: FC<{ onClick?: () => void }> = ({ onClick }) => {
-    return <Button align={'middle'} onClick={onClick}>
-        <Hidden className="start-button-hidden">
-            Let's go!
-        </Hidden>
-        <Col>
-            <Circle className="start-button-circle">
-                <Border>
-                    <Background className="start-button-border">
-                        <ArrowRightOutlined />
-                    </Background>
-                </Border>
-            </Circle>
-        </Col>
-        <Text className="start-button-text">
-            Start a project
-        </Text>
-    </Button>
+export const StartButton: FC<{ href?: string }> = ({ href }) => {
+    return <Link href={href ?? '/contact'}>
+        <Button align={'middle'}>
+            <Hidden className="start-button-hidden">
+                Let's go!
+            </Hidden>
+            <Col>
+                <Circle className="start-button-circle">
+                    <Border>
+                        <Background className="start-button-border">
+                            <ArrowRightOutlined />
+                        </Background>
+                    </Border>
+                </Circle>
+            </Col>
+            <Text className="start-button-text">
+                Start a project
+            </Text>
+        </Button>
+    </Link>
 }
