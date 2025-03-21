@@ -42,7 +42,7 @@ export const Subscriptor: FC = () => {
                         <Col>
                             <Form>
                                 <Item>
-                                    <Email/>
+                                    <Email placeholder={'your.email@gmail.com'}/>
                                 </Item>
                             </Form>
                         </Col>

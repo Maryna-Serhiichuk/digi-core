@@ -157,7 +157,10 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               paddingBlock: 18,
               borderRadius: 10,
               controlHeight: 63,
+
               primaryColor: colors.dark['06'],
+              colorPrimaryHover: colors.orange[70],
+
               ghostBg: colors.dark[12],
               defaultGhostColor: colors.orange[95],
               defaultGhostBorderColor: 'transparent',
