@@ -38,7 +38,7 @@ const Text = styled(Col)`
     z-index: 2;
     ${responsiveSize('font-size', 24, 20, 20)}
     font-weight: 500;
-    color: ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+    color: ${({ theme }: any) =>  theme?.token?.colors?.primary[60]};
     text-transform: uppercase;
     transition: inherit;
 `
@@ -56,7 +56,7 @@ const Circle = styled(Row)`
     ${responsiveSize('width', 77, 56, 56)}
     ${responsiveSize('height', 77, 56, 56)}
     border-radius: 50%;
-    border: 2px solid ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+    border: 2px solid ${({ theme }: any) =>  theme?.token?.colors?.primary[60]};
     transition: inherit;
 
     &:after {
@@ -95,7 +95,7 @@ const Background = styled(Col)`
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background: ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+    background: ${({ theme }: any) =>  theme?.token?.colors?.primary[60]};
     transition: 300ms;
 
     svg {

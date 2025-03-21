@@ -7,16 +7,20 @@ import styled from "@emotion/styled"
 import { responsiveSize } from "@/utils/responsiveSize";
 
 const ContainerGap = styled(Col)`
+    display: flex;
+    max-width: 1920px;
     ${responsiveSize('padding-left', 50, 40, 16)}
     ${responsiveSize('padding-right', 50, 40, 16)}
-    ${responsiveSize('padding-top', 50, 50, 50)}
+    ${responsiveSize('padding-top', 20, 20, 20)}
     ${responsiveSize('padding-bottom', 50, 50, 50)}
 `
 
 export const Container: FC<PropsWithChildren> = ({ children }) => {
-    return <ContainerGap span={24}>
-        <Gap>
-            {children}
-        </Gap>
-    </ContainerGap>
+    return <Row justify={'center'}>
+        <ContainerGap span={24}>
+            <Gap>
+                {children}
+            </Gap>
+        </ContainerGap>
+    </Row>
 }

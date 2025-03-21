@@ -17,7 +17,7 @@ const StyledCol = styled('div', {
     position: relative;
     overflow: hidden;
     height: 100%;
-    background: ${({ theme, background }: any) => background === 'primary' ? theme?.token?.colors?.orange[60] : theme?.token?.colors?.dark[10]};
+    background: ${({ theme, background }: any) => background === 'primary' ? theme?.token?.colors?.primary[60] : theme?.token?.colors?.dark[10]};
     color: ${({ theme }: any) => theme?.token?.colors?.dark[10]};
     border-radius: 16px;
 `

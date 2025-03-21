@@ -26,7 +26,7 @@ const Dot = styled(Col)`
     height: 4px;
     width: 4px;
     margin: 0 8px;
-    background: ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+    background: ${({ theme }: any) =>  theme?.token?.colors?.primary[60]};
     border-radius: 50%;
     transform: translateY(1px);
 `

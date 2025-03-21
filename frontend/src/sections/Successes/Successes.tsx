@@ -20,7 +20,7 @@ const Value = styled(Typography.Title)`
     ${responsiveSize('font-size', 60, 40, 40)}
     && {
         margin: 0;
-        color: ${({ theme }: any) =>  theme?.token?.colors?.orange[70]};
+        color: ${({ theme }: any) =>  theme?.token?.colors?.primary[70]};
     }
 `
 
@@ -53,7 +53,7 @@ export const Successes: FC = () => {
                     <Row align={'middle'} justify={'center'} style={{ height: '100%' }}>
                         <Container span={24}>
                             <Col>
-                                <DarkArrowButton>
+                                <DarkArrowButton href={'/about'}>
                                     Know more
                                 </DarkArrowButton>
                             </Col>

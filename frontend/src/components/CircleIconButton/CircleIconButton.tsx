@@ -20,7 +20,7 @@ const Circle = styled(Col)`
     border-radius: 50%;
 
     svg {
-        fill: ${({ theme }: any) => theme?.token?.colors?.orange[80]};
+        fill: ${({ theme }: any) => theme?.token?.colors?.primary[80]};
     }
 `
 

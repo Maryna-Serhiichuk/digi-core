@@ -25,7 +25,7 @@ const Border = styled('div')`
     align-items: center;
     ${responsiveSize('height', 149, 111, 0)}
     ${responsiveSize('width', 149, 111, 0)}
-    background: ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+    background: ${({ theme }: any) =>  theme?.token?.colors?.primary[60]};
     border-radius: 50%;
 
     &:before {
@@ -59,7 +59,7 @@ const Background = styled('div')`
     align-items: center;
     ${responsiveSize('height', 88, 60, 0)}
     ${responsiveSize('width', 88, 60, 0)}
-    background: ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+    background: ${({ theme }: any) =>  theme?.token?.colors?.primary[60]};
     border-radius: 50%;
     transition: 300ms;
 

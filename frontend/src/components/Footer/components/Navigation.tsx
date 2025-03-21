@@ -10,7 +10,7 @@ import { Padding } from "@/components/Padding";
 const Name = styled(Typography.Title)`
     && {
         letter-spacing: 1px;
-        color: ${({ theme }: any) => theme?.token?.colors?.orange[90]};
+        color: ${({ theme }: any) => theme?.token?.colors?.primary[90]};
     }
 `
 

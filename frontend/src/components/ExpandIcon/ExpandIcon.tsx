@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import styled from "@emotion/styled"
-import Line from '@/sources/icons/line.svg'
+import Line from '@/components/Icons/Line'
 import { responsiveSize } from "@/utils/responsiveSize";
 
 type ExpandIcon = {
@@ -18,9 +18,13 @@ const Container = styled('div')`
     background: ${({ theme }: any) => theme?.token?.colors?.dark[12]};
     border: 1px solid ${({ theme }: any) => theme?.token?.colors?.dark[20]};
     border-radius: 50%;
+
+    svg {
+        fill: ${({ theme }: any) => theme?.token?.colors?.primary[80]};
+    }
 `
 
-const VerticalLine = styled(Image, {
+const VerticalLine = styled(Line, {
     shouldForwardProp: (prop) => !['open'].includes(prop),
 })<{ open?: ExpandIcon['open'] }>`
     position: absolute;
@@ -30,7 +34,7 @@ const VerticalLine = styled(Image, {
 
 export const ExpandIcon: FC<ExpandIcon> = ({ open }) => {
     return <Container>
-        <Image src={Line} alt={""} />
-        <VerticalLine open={open} src={Line} alt={""} />
+        <Line />
+        <VerticalLine open={open} />
     </Container>
 }

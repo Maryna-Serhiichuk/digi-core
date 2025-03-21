@@ -13,7 +13,7 @@ type ColorsType = {
         text: string,
         background: string
     },
-    orange: {
+    primary: {
         '60': string,
         '65': string,
         '70': string,

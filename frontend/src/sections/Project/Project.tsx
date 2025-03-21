@@ -30,11 +30,11 @@ const UpperTitle = styled(Typography.Title)`
 
 const Images = styled(Avatar)`
     img {
-        background: ${({ theme }: any) => theme?.token?.colors?.orange[80]};
+        background: ${({ theme }: any) => theme?.token?.colors?.primary[80]};
     }
 `
 
-export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, technologies, description, members, ...props }) => {
+export const Project: FC<ProjectArgs> = ({ title, category, time, image, technologies, description, members, ...props }) => {
     return <Col span={24}>
         <Border>
             <Gap>

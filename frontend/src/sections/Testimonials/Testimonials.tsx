@@ -12,7 +12,7 @@ const Title = styled(Typography.Title)`
     && {
         ${responsiveSize('font-size', 26, 22, 18)}
         text-transform: uppercase;
-        color: ${({ theme }: any) => theme?.token?.colors?.orange[95]};
+        color: ${({ theme }: any) => theme?.token?.colors?.primary[95]};
     }
 `
 

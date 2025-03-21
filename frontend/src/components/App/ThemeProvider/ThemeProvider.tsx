@@ -1,11 +1,13 @@
 "use client"
 
 import { FC, PropsWithChildren, useState, useMemo, useCallback } from 'react';
-import { ConfigProvider, Grid } from 'antd';
+import { Col, ConfigProvider, Flex, Grid, Row } from 'antd';
 import { Roboto_Mono, Roboto_Flex } from 'next/font/google'
 import EmotionProvider from '../EmotionProvider';
 import { responsiveSize } from '@/utils/responsiveSize';
 import { ColorsType, ThemeConfig } from '@/types/theme';
+import { Padding } from '@/components/Padding';
+import { Color } from '@/components/Color';
 
 const robotoMono = Roboto_Mono({
     weight: ['400', '500', '700'],
@@ -24,13 +26,10 @@ const darkTheme: ThemeConfig = {
 
 }
 
-const colors: ColorsType = {
-    test: '#ff0000',
-    absolute: {
-        text: '#ffffff',
-        background: '#000000'
-    },
-    orange: {
+export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+    const { xs, sm, md, lg, xl } = Grid.useBreakpoint()
+    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [primaryColor, setPrimaryColor] = useState<ColorsType['primary']>({
         '60': '#ce7d63',
         '65': '#D48E77',
         '70': '#DA9E8A',
@@ -39,98 +38,7 @@ const colors: ColorsType = {
         '95': '#F9EFEC',
         '97': '#FBF5F3',
         '99': '#FEFCFB'
-    },
-    dark: {
-        '06': '#0F0F0F',
-        '10': '#191919',
-        '12': '#1F1F1F',
-        '15': '#262626',
-        '20': '#333333',
-        '25': '#404040',
-        '30': '#4C4C4C',
-        '35': '#595959'
-    },
-    grey: {
-        '40': '#676665',
-        '50': '#81807E',
-        '70': '#B3B3B2',
-        '80': '#CCCCCC',
-        '90': '#E6E6E6',
-        '95': '#F2F2F2',
-        '97': '#F7F7F7',
-        '99': '#FCFCFC'
-    }
-}
-
-const globalStyles = `
-    * {
-        font-family: ${robotoMono.style.fontFamily};
-    }
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --background: ${colors.dark['06']};
-        }
-    }
-    .ant-btn-color-primary {
-        box-shadow: none;
-    }
-    a.active {
-        .ant-btn.ant-btn-default {
-            color: ${colors.orange[80]};
-        }
-    }
-    .ant-btn {
-        text-transform: uppercase;
-        font-weight: 500;
-    }
-    h1.ant-typography {
-        ${responsiveSize('font-size', 78, 54, 28)}
-        letter-spacing: -2px;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
-    h2.ant-typography {
-        ${responsiveSize('font-size', 48, 38, 28)}
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-    h3.ant-typography { 
-        font-family: ${robotoMono.style.fontFamily};
-        font-weight: 400;
-        color: ${colors.orange[95]};
-        text-transform: uppercase;
-        ${responsiveSize('font-size', 30, 20, 20)}
-    }
-    h4.ant-typography { 
-        font-family: ${robotoMono.style.fontFamily};
-        font-weight: 500;
-        color: ${colors.grey[40]};
-        ${responsiveSize('font-size', 23, 20, 18)}
-    }
-    h5.ant-typography {
-        font-weight: 400;
-        color: ${colors.grey[70]};
-        margin-bottom: 5px;
-        ${responsiveSize('font-size', 21, 16, 14)}
-    }
-    h1, h2, h3, h4, h5 {
-        &.ant-typography {
-            font-family: ${robotoFlex.style.fontFamily};
-            
-        }
-    }
-    .ant-typography {
-         ${responsiveSize('font-size', 18, 16, 14)}
-    }
-    .ant-form-item-label {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-`;
-
-export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { xs, sm, md, lg, xl } = Grid.useBreakpoint()
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    })
 
     const getCollapseHeadPadding = useCallback(() => {
         if (xl) return 50
@@ -140,49 +48,141 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
         return 60
     }, [xl, md, sm, xs])
 
+    const colors: ColorsType = useMemo(() => {
+        return {
+            test: '#ff0000',
+            absolute: {
+                text: '#ffffff',
+                background: '#000000'
+            },
+            primary: primaryColor,
+            dark: {
+                '06': '#0F0F0F',
+                '10': '#191919',
+                '12': '#1F1F1F',
+                '15': '#262626',
+                '20': '#333333',
+                '25': '#404040',
+                '30': '#4C4C4C',
+                '35': '#595959'
+            },
+            grey: {
+                '40': '#676665',
+                '50': '#81807E',
+                '70': '#B3B3B2',
+                '80': '#CCCCCC',
+                '90': '#E6E6E6',
+                '95': '#F2F2F2',
+                '97': '#F7F7F7',
+                '99': '#FCFCFC'
+            }
+        }
+    }, [primaryColor])
+
+    const globalStyles = useMemo(() => {
+        return `
+            * {
+                font-family: ${robotoMono.style.fontFamily};
+            }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --background: ${colors.dark['06']};
+                }
+            }
+            .ant-btn-color-primary {
+                box-shadow: none;
+            }
+            a.active {
+                .ant-btn.ant-btn-default {
+                    color: ${colors.primary[80]};
+                }
+            }
+            .ant-btn {
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            h1.ant-typography {
+                ${responsiveSize('font-size', 78, 54, 28)}
+                letter-spacing: -2px;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            h2.ant-typography {
+                ${responsiveSize('font-size', 48, 38, 28)}
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            h3.ant-typography { 
+                font-family: ${robotoMono.style.fontFamily};
+                font-weight: 400;
+                color: ${colors.primary[95]};
+                text-transform: uppercase;
+                ${responsiveSize('font-size', 30, 20, 20)}
+            }
+            h4.ant-typography { 
+                font-family: ${robotoMono.style.fontFamily};
+                font-weight: 500;
+                color: ${colors.grey[40]};
+                ${responsiveSize('font-size', 23, 20, 18)}
+            }
+            h5.ant-typography {
+                font-weight: 400;
+                color: ${colors.grey[70]};
+                margin-bottom: 5px;
+                ${responsiveSize('font-size', 21, 16, 14)}
+            }
+            h1, h2, h3, h4, h5 {
+                &.ant-typography {
+                    font-family: ${robotoFlex.style.fontFamily};
+                    
+                }
+            }
+            .ant-typography {
+                ${responsiveSize('font-size', 18, 16, 14)}
+            }
+            .ant-form-item-label {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+        `
+    }, [colors])
+
     const lightTheme: ThemeConfig = useMemo(() => ({
         // algorithm: theme.darkAlgorithm,
         token: {
             colors: colors,
-            // Seed Token
-            // colorPrimary: '#cebd63',
             borderRadius: 2,
-    
-            colorBgBase: colors.dark['06'],  // Фон всього сайту
-            // colorText: colors.grey[70],    // Основний колір тексту
-    
-            // Alias Token
-            // colorBgContainer: '#f6ffed',
+            colorBgBase: colors.dark['06'],
         },
         components: {
             Button: {
-              colorPrimary: colors.orange[60],
+              colorPrimary: colors.primary[60],
             //   algorithm: true, // Enable algorithm
               paddingInline: 24,
               paddingBlock: 18,
               borderRadius: 10,
               controlHeight: 63,
               primaryColor: colors.dark['06'],
-              colorPrimaryHover: colors.orange[70],
+              colorPrimaryHover: colors.primary[70],
               ghostBg: colors.dark[12],
-              defaultGhostColor: colors.orange[95],
+              defaultGhostColor: colors.primary[95],
               defaultGhostBorderColor: 'transparent',
               defaultBg: colors.absolute.background,
               defaultColor: colors.grey[50],
               defaultBorderColor: 'transparent',
               defaultHoverBg: colors.absolute.background,
-              defaultHoverColor: colors.orange[80],
+              defaultHoverColor: colors.primary[80],
               defaultHoverBorderColor: 'transparent',
-              defaultActiveBg: colors.orange[80],
+              defaultActiveBg: colors.primary[80],
               defaultActiveBorderColor: 'transparent',
               contentFontSize: 18,
-              colorLink: colors.orange[90],
-              colorLinkActive: colors.orange[60],
-              colorLinkHover: colors.orange[60],
-              colorIconHover: colors.orange[60],
+              colorLink: colors.primary[90],
+              colorLinkActive: colors.primary[60],
+              colorLinkHover: colors.primary[60],
+              colorIconHover: colors.primary[60],
             },
             Form: {
-                labelColor: colors?.orange[90],
+                labelColor: colors?.primary[90],
                 labelFontSize: 18,
             },
             Input: {
@@ -193,17 +193,14 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               colorText: colors.grey[90],
               fontSize: 18,
               colorTextPlaceholder: colors.grey[40],
-              activeBorderColor: colors?.orange[70],
-              hoverBorderColor: colors?.orange[70],
+              activeBorderColor: colors?.primary[70],
+              hoverBorderColor: colors?.primary[70],
               activeShadow: 'none',
               // algorithm: true, // Enable algorithm
             },
             Typography: {
                 colorText: colors.grey[70],
-                // fontSizeHeading1: getFontSizeHeading1(),
-                // fontSizeHeading4: 20,
-                // fontSizeHeading5: 18,
-                colorTextHeading: colors.orange[95],
+                colorTextHeading: colors.primary[95],
                 titleMarginTop: 0,
                 titleMarginBottom: 0,
             },
@@ -216,29 +213,33 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
             },
             Checkbox: {
                 colorText: colors.grey[70],
-                colorPrimary: colors?.orange[60],
-                colorPrimaryHover: colors?.orange[60],
+                colorPrimary: colors?.primary[60],
+                colorPrimaryHover: colors?.primary[60],
                 colorWhite: colors?.dark?.['06'],
                 controlInteractiveSize: 28,
                 fontSize: 18
             }
         },
-    }), [xl])
-
-//   useEffect(() => {
-//     const savedTheme = localStorage.getItem('theme');
-//     if (savedTheme) {
-//       setIsDarkMode(savedTheme === 'dark');
-//     } else {
-//       setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-//     }
-//   }, []);
+    }), [xl, primaryColor])
 
     return (
         <ConfigProvider
             theme={isDarkMode ? darkTheme : lightTheme}
         >
             <EmotionProvider>
+                <Padding inlineSize={'large'} blockSize={[24,0]}>
+                    <Col span={24}>
+                        <Row justify={'space-between'} align={'middle'}>
+                            <Col>
+                                Please note that this is not a real website. It has been created solely for portfolio purposes.
+                            </Col>
+                            <Flex align={'center'}>
+                                Theme:
+                                <Color onChange={values => setPrimaryColor(values)}/>
+                            </Flex>
+                        </Row>
+                    </Col>
+                </Padding>
                 <style>{globalStyles}</style>
                 {children}
             </EmotionProvider>

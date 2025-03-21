@@ -14,7 +14,7 @@ const ImageRec = styled(Col)`
     ${responsiveSize('padding', 16, 12, 8)}
     border-radius: 12px;
     svg {
-        fill: ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+        fill: ${({ theme }: any) =>  theme?.token?.colors?.primary[60]};
     }
 `
 

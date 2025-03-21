@@ -12,7 +12,7 @@ interface RunLineArgs {
 const Circle = styled('div')`
     width: 8px;
     height: 8px;
-    background: ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+    background: ${({ theme }: any) =>  theme?.token?.colors?.primary[60]};
     border-radius: 50%;
 `
 

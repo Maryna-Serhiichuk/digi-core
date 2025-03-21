@@ -6,7 +6,7 @@ import { ExpandIcon } from "@/components/ExpandIcon";
 
 const Label = styled(Typography.Title)`
     && {
-        color: ${({ theme }: any) => theme?.token?.colors?.orange[95]};
+        color: ${({ theme }: any) => theme?.token?.colors?.primary[95]};
     }
 `
 

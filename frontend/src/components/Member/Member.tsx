@@ -12,7 +12,7 @@ const Person = styled(Typography.Title)`
 
 const Background = styled(Avatar)`
     img {
-        background: ${({ theme }: any) => theme?.token?.colors?.orange[60]};
+        background: ${({ theme }: any) => theme?.token?.colors?.primary[60]};
     }
 `
 

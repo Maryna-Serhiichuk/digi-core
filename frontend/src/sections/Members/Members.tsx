@@ -13,7 +13,7 @@ import Twitter from '@/components/Icons/Twitter'
 import Linkedin from '@/components/Icons/Linkedin'
 
 const Photo = styled(Row)`
-    background: ${({ theme }: any) => theme?.token?.colors?.orange[80]};
+    background: ${({ theme }: any) => theme?.token?.colors?.primary[80]};
     border-radius: 12px;
     height: 220px;
     ${responsiveSize('height', 220, 180, 150)}

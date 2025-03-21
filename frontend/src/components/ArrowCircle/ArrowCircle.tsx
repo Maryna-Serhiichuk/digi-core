@@ -29,7 +29,7 @@ const Circle = styled(Col, {
         transform: rotate(${({ rotate }: any) => rotate ?? -45}deg);
         font-size: 30px;
         ${responsiveSize('font-size', 30, 20, 19)}
-        fill: ${({ theme, color }: any) => color === 'light' ? 'black' : theme?.token?.colors?.orange[80]};
+        fill: ${({ theme, color }: any) => color === 'light' ? 'black' : theme?.token?.colors?.primary[80]};
     }
 `
 
