@@ -157,10 +157,8 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               paddingBlock: 18,
               borderRadius: 10,
               controlHeight: 63,
-
               primaryColor: colors.dark['06'],
               colorPrimaryHover: colors.orange[70],
-
               ghostBg: colors.dark[12],
               defaultGhostColor: colors.orange[95],
               defaultGhostBorderColor: 'transparent',
@@ -172,7 +170,11 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               defaultHoverBorderColor: 'transparent',
               defaultActiveBg: colors.orange[80],
               defaultActiveBorderColor: 'transparent',
-              contentFontSize: 18
+              contentFontSize: 18,
+              colorLink: colors.orange[90],
+              colorLinkActive: colors.orange[60],
+              colorLinkHover: colors.orange[60],
+              colorIconHover: colors.orange[60],
             },
             Form: {
                 labelColor: colors?.orange[90],
