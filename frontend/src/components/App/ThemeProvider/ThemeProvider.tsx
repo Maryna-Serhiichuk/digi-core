@@ -74,6 +74,11 @@ const globalStyles = `
     .ant-btn-color-primary {
         box-shadow: none;
     }
+    a.active {
+        .ant-btn.ant-btn-default {
+            color: ${colors.orange[80]};
+        }
+    }
     .ant-btn {
         text-transform: uppercase;
         font-weight: 500;

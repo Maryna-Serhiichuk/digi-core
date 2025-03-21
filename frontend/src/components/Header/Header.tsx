@@ -4,11 +4,11 @@ import { FC, useState } from "react";
 import styled from "@emotion/styled"
 import header from '@/data/header.json'
 import { Button, Col, Drawer, Flex, Grid, Row } from "antd";
-import { Logo } from "../Logo";
-import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
-import { ContainerBg } from "../ContainerBg";
+import { ContainerBg } from "@/components/ContainerBg";
 import { responsiveSize } from "@/utils/responsiveSize";
+import { NavLink } from "@/components/NavLink";
 
 const HeaderPadding = styled(Row)`
     width: 100%;
@@ -48,20 +48,20 @@ export const Header: FC = () => {
                     <Col span={24}>
                         <Flex gap={4} vertical>
                             {header?.map(button => (
-                                <Row>
-                                    <Link href={button?.link}>
+                                <Row key={button?.label}>
+                                    <NavLink href={button?.link}>
                                         <Button type={'link'}>
                                             {button?.label}
                                         </Button>
-                                    </Link>
+                                    </NavLink>
                                 </Row>
                             ))}
                             <Row>
-                                <Link href={'/contact'}>
+                                <NavLink href={'/contact'}>
                                     <Button type={'link'}>
                                         Contact us
                                     </Button>
-                                </Link>
+                                </NavLink>
                             </Row>
                         </Flex>
                     </Col>
@@ -71,19 +71,19 @@ export const Header: FC = () => {
                 <Row gutter={[16, 0]} align={'middle'} wrap={false}>
                     {header?.map(button => (
                         <Col key={button.label}>
-                            <Link href={button?.link}>
+                            <NavLink href={button?.link}>
                                 <NavButton type={'default'}>
                                     {button?.label}
                                 </NavButton>
-                            </Link>
+                            </NavLink>
                         </Col>
                     ))}
                     <Col>
-                        <Link href={'/contact'}>
+                        <NavLink href={'/contact'}>
                             <NavButton type={'primary'}>
                                 Contact us
                             </NavButton>
-                        </Link>
+                        </NavLink>
                     </Col>
                 </Row>
             </Col>
