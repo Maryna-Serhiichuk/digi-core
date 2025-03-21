@@ -6,8 +6,7 @@ import mobile from "@/sources/hero-services/mob.jpg"
 
 export const HeroSections: FC = () => {
     return <Hero
-        titleLine1={'Our Comprehensive'}
-        titleLine2={'Digital Solutions'}
+        title={'Our Comprehensive * Digital Solutions'}
         subtitle={'At DigiCore, we offer a comprehensive suite of digital solutions designed to propel your business to new heights in the digital realm. With a team of skilled professionals, cutting-edge technologies, and a passion for innovation'}
         image={{ full, middle, mobile, alt: '' }}
     />

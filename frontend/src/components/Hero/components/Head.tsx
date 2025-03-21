@@ -3,28 +3,27 @@ import { Row, Col, Typography, Grid } from "antd";
 import { StartButton } from "@/components/StartButton";
 
 export interface HeadArgs {
-    titleLine1: string
-    titleLine2?: string
     subtitle?: string
+    title?: string
 }
 
-export const Head: FC<HeadArgs> = ({ titleLine1, titleLine2, subtitle }) => {
+export const Head: FC<HeadArgs> = ({ subtitle, title }) => {
     const { xl } = Grid.useBreakpoint()
     return <Col>
         <Row gutter={[20, 0]}>
             <Col>
                 <Typography.Title level={1}>
-                    {titleLine1}
+                    {title?.split(' ', 3)?. join(' ')?.replaceAll('*', '') ?? ''}
                 </Typography.Title>
             </Col>
             <Col hidden={!xl}>
                 <StartButton/>
             </Col>
         </Row>
-        {titleLine2 &&
+        {title?.split(' ')?.slice(3)?.join(' ') &&
             <Row>
                 <Typography.Title level={1}>
-                    {titleLine2}
+                    {title?.split(' ')?.slice(3)?.join(' ')}
                 </Typography.Title>
             </Row>
         }

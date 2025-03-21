@@ -16,8 +16,7 @@ export const HeroArticle: FC<{ article: ArticleType | undefined }> = ({ article 
 
     return <Hero
         withoutLine
-        titleLine1={article?.title?.split(' ', 3)?. join(' ') ?? ''}
-        titleLine2={article?.title?.split(' ')?.slice(3)?.join(' ')}
+        title={article?.title}
     >
         <Padding inlineSize={'small'} blockSize={'small'}>
             <Col span={24}>

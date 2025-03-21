@@ -6,8 +6,7 @@ import { Padding } from "@/components/Padding";
 export const HeroCareers: FC = () => {
     return <Hero
         withoutLine
-        titleLine1={'Empower Your'}
-        titleLine2={'Career in the Digital Age'}
+        title={'Empower Your * Career in the Digital Age'}
     >
         <Padding inlineSize={'middle'} blockSize={'middle'}>
             <Flex vertical gap={50}>
