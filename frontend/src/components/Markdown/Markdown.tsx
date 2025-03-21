@@ -6,6 +6,9 @@ import styled from "@emotion/styled"
 const Paragraph = styled(Typography.Paragraph)`
     margin-block: 10px;
     margin-left: 60px;
+    @media(max-width: 1100px) {
+        margin-left: 0px;
+    }
 `
 
 const Title = styled(Typography.Title)`

@@ -1,4 +1,4 @@
-import { RefObject, useState } from "react";
+import { CSSProperties, RefObject, useState } from "react";
 
 interface UseAffixContainerControllerArgs {
     ref: RefObject<HTMLDivElement | null>
@@ -6,23 +6,22 @@ interface UseAffixContainerControllerArgs {
 
 type UseAffixContainerControllerResponse = [
     () => void,
-    string|undefined
+    CSSProperties | undefined
 ]
 
 export function useAffixContainerController(ref: UseAffixContainerControllerArgs['ref']): UseAffixContainerControllerResponse {
-    const [affixPosition, setAffixPosition] = useState<string|undefined>(undefined)
+    const [affixStyles, setAffixStyles] = useState<CSSProperties | undefined>(undefined)
 
     const controler = () => {
         if(ref){
-            const scroll = window?.scrollY
-            const top = ref?.current?.offsetTop
+            const top = ref?.current?.getBoundingClientRect()?.top
             const height = ref?.current?.offsetHeight
-    
-            if(top && height) {
-                if(scroll > (top + height + 200)) {
-                    setAffixPosition('none')
+
+            if(top && height){
+                if(top < (0 - height)){
+                    setAffixStyles({ opacity: 0 })
                 } else {
-                    setAffixPosition(undefined)
+                    setAffixStyles(undefined)
                 }
             }
         }
@@ -30,6 +29,6 @@ export function useAffixContainerController(ref: UseAffixContainerControllerArgs
     
     return [
         controler,
-        affixPosition
+        affixStyles
     ]
 }

@@ -10,7 +10,7 @@ interface RelatedArgs {
 export const Related: FC<RelatedArgs> = ({ articles }) => {
     return <Section label={'Related Blogs'}>
         {articles?.slice(0, 3)?.map(article => (
-            <ArticlePreviewShort {...article}/>
+            <ArticlePreviewShort key={article?.id} {...article}/>
         ))}
     </Section>
 }

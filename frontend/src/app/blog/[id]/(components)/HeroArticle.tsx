@@ -23,7 +23,7 @@ export const HeroArticle: FC<{ article: ArticleType | undefined }> = ({ article 
             <Col span={24}>
                 <Flex vertical gap={16}>
                     {articleDescription?.map(item => (
-                        <Badge {...item} />
+                        <Badge key={item?.name} {...item} />
                     ))}
                 </Flex>
             </Col>

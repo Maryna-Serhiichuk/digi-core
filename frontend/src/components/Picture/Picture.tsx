@@ -28,6 +28,6 @@ export const Picture: FC<PropsWithChildren<PictureArgs>> = ({ children, full, mi
         <source srcSet={mobile?.src} media="(max-width: 798px)" />
         <source srcSet={middle?.src} media="(max-width: 1440px)"/>
         <source srcSet={full?.src} media="(min-width: 1441px)" />
-        {children ?? <ImageBg src={full ?? middle ?? mobile ?? ''} alt={alt ?? ''}/>}
+        {children ?? ((full || middle || mobile) && <ImageBg src={full ?? middle ?? mobile ?? ''} alt={alt ?? ''}/>)}
     </PictureBg>
 }

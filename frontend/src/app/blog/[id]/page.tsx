@@ -7,22 +7,22 @@ import { Follow } from "@/sections/Follow";
 import { Testimonials } from "@/sections/Testimonials";
 import { Col } from "antd";
 import { HeroArticle } from "./(components)/HeroArticle";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { articles } from "@/data/articles/articles";
 import { Article } from "@/sections/Article";
 import { ArticleType } from "@/data/articles";
 import { Related } from "@/sections/Related";
 
-export default function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = use(params);
     const [article, setArticle] = useState<ArticleType>()
     const [relatedArticles, setRelatedArticles] = useState<Array<ArticleType>>()
 
     useEffect(() => {
-        const coosen = articles?.find(art => art?.id === params?.id)
-        params?.id && setArticle(coosen)
+      const coosen = articles?.find(art => art?.id === id)
+      setArticle(coosen)
 
-        setRelatedArticles(articles?.filter(art => art?.category === coosen?.category))
-
+      setRelatedArticles(articles?.filter(art => art?.category === coosen?.category))
     }, [params])
 
     return (
