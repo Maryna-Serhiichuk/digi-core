@@ -31,7 +31,7 @@ export const Header: FC = () => {
                             </Col>
                         ))}
                         <Col>
-                            <Link href={'/'}>
+                            <Link href={'/contact'}>
                                 <Button type={'primary'}>
                                     Contact us
                                 </Button>

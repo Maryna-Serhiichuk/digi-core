@@ -117,6 +117,10 @@ const globalStyles = `
     .ant-typography {
          ${responsiveSize('font-size', 18, 16, 14)}
     }
+    .ant-form-item-label {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
 `;
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -199,6 +203,14 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
             },
             Divider: {
                 colorSplit: colors?.dark[15]
+            },
+            Checkbox: {
+                colorText: colors.grey[70],
+                colorPrimary: colors?.orange[60],
+                colorPrimaryHover: colors?.orange[60],
+                colorWhite: colors?.dark?.['06'],
+                controlInteractiveSize: 28,
+                fontSize: 18
             }
         },
     }), [xl])
