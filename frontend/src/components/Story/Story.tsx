@@ -14,7 +14,7 @@ interface StoryArgs extends IconSquareLabelArgs {
     results: string
 }
 
-export const Story: FC<StoryArgs> = ({ industry, service, challenge, solution, results, title, icon }) => {
+export const Story: FC<StoryArgs> = ({ industry, service, challenge, solution, results, title, ...props }) => {
     return <Col span={24}>
         <Gap>
             <Border>
@@ -22,7 +22,7 @@ export const Story: FC<StoryArgs> = ({ industry, service, challenge, solution, r
                     <ProjectHead
                         xs={24} sm={24} lg={12}
                         title={title}
-                        icon={icon}
+                        {...props}
                         tags={[
                             { key: 'Industry', value: industry },
                             { key: 'Service Utilixed', value: service }

@@ -1,12 +1,11 @@
 import { Col } from "antd";
 import Image, { StaticImageData } from "next/image";
-import { FC } from "react";
+import { ComponentType, FC, SVGProps } from "react";
 import styled from "@emotion/styled"
-import { responsiveSize } from "@/utils/responsiveSize";
 import Link from "next/link";
 
 export interface CircleIconButtonArgs {
-    icon?: StaticImageData
+    element?: ComponentType<SVGProps<SVGSVGElement>>
     link?: string
 }
 
@@ -20,17 +19,16 @@ const Circle = styled(Col)`
     border: 1px solid ${({ theme }: any) => theme?.token?.colors?.dark[20]};
     border-radius: 50%;
 
-    img {
-        width: 24px;
-        fill: #E7BEB1;
+    svg {
+        fill: ${({ theme }: any) => theme?.token?.colors?.orange[80]};
     }
 `
 
-export const CircleIconButton: FC<CircleIconButtonArgs> = ({ icon, link }) => {
+export const CircleIconButton: FC<CircleIconButtonArgs> = ({ element: Icon, link }) => {
     return <Link href={link ?? ''}>
         <Circle>
-            {icon &&
-                <Image src={icon} alt={''}/>
+            {Icon &&
+                <Icon width={24} height={24}/>
             }
         </Circle>
     </Link>

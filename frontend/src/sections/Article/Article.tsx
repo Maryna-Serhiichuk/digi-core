@@ -10,10 +10,11 @@ import { Gap } from "@/components/Gap";
 import { Member } from "@/components/Member";
 import { ArticleType } from "@/data/articles";
 import { IconSquare } from "@/components/IconSquare";
-import twitter from '@/sources/icons/twitter.svg'
-import facebook from '@/sources/icons/facebook.svg'
-import instagram from '@/sources/icons/instagram.svg'
+import Twitter from '@/components/Icons/Twitter'
+import Facebook from '@/components/Icons/Facebook'
+import Instagram from '@/components/Icons/Instagram'
 import { useAffixContainerController } from "@/hooks/useAffixContainerController";
+import Link from "next/link";
 
 const Illustration = styled(Row)`
     ${responsiveSize('height', 600, 600, 240)}
@@ -41,13 +42,19 @@ export const Article: FC<{ data: ArticleType | undefined }> = ({ data }) => {
                     <Affix offsetTop={16} style={{ position: 'sticky', ...affixStyles }}>
                         <Flex vertical={lg} gap={16} justify={lg ? undefined : 'center'}>
                             <Row justify={'end'}>
-                                <IconSquare icon={twitter} alt="twitter"/>
+                                <Link href={'https://twitter.com'}>
+                                    <IconSquare size={24} element={Twitter}/>
+                                </Link>
                             </Row>
                             <Row justify={'end'}>
-                                <IconSquare icon={facebook} alt="twitter"/>
+                                <Link href={'https://facebook.com'}>
+                                    <IconSquare size={24} element={Facebook}/>
+                                </Link>
                             </Row>
                             <Row justify={'end'}>
-                                <IconSquare icon={instagram} alt="twitter"/>
+                                <Link href={'https://instagram.com'}>
+                                    <IconSquare size={24} element={Instagram}/>
+                                </Link>
                             </Row>
                         </Flex>
                     </Affix>

@@ -9,13 +9,13 @@ interface FeatureArgs extends Omit<IconSquareArgs, 'alt'> {
     description: string
 }
 
-export const Feature: FC<FeatureArgs> = ({ icon, description, title }) => {
+export const Feature: FC<FeatureArgs> = ({ icon, description, title, ...iconProps }) => {
     return <ContainerBg xs={24} md={12} lg={6}>
         <Padding inlineSize={'small'} blockSize={'small'}>
             <Col span={24}>
                 <Flex vertical gap={50}>
                     <Row>
-                        <IconSquare icon={icon} alt={'title'}/>
+                        <IconSquare {...iconProps}/>
                     </Row>
                     <Flex vertical gap={'middle'}>
                         <Row>

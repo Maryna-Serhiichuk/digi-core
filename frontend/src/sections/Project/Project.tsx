@@ -30,18 +30,18 @@ const UpperTitle = styled(Typography.Title)`
 
 const Images = styled(Avatar)`
     img {
-        background: #E7BEB1;
+        background: ${({ theme }: any) => theme?.token?.colors?.orange[80]};
     }
 `
 
-export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, technologies, description, members }) => {
+export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, technologies, description, members, ...props }) => {
     return <Col span={24}>
         <Border>
             <Gap>
                 <ProjectHead
                     xs={{ span: 24, order: 2 }} md={{ span: 14, order: 1 }} lg={12} xl={8}
                     title={title}
-                    icon={icon}
+                    {...props}
                     tags={[
                         { key: 'Category', value: category },
                         { key: 'Time Taken', value: time },
@@ -49,7 +49,7 @@ export const Project: FC<ProjectArgs> = ({ icon, title, category, time, image, t
                     description={description}
                 />
                 <ContainerBg xs={{ span: 24, order: 1 }} md={{ span: 10, order: 2 }} lg={12} xl={8}>
-                    <Picture {...image} alt={title} />
+                    <Picture {...image} />
                 </ContainerBg>
                 <Col xs={0} xl={{ span: 8, order: 3 }}>
                     <Gap>

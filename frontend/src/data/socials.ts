@@ -1,5 +1,5 @@
-import Instagram from '@/sources/icons/instagram.svg'
-import Twitter from '@/sources/icons/twitter.svg'
+import Instagram from '@/components/Icons/Instagram'
+import Twitter from '@/components/Icons/Twitter'
 import array from '@/data/socials.json'
 
 const icons = [
@@ -9,4 +9,4 @@ const icons = [
     Twitter
 ]
 
-export const socials = array?.map((it, i) => ({ ...it, icon: icons[i] }))
+export const socials = array?.map((it, i) => ({ ...it, element: icons[i] }))

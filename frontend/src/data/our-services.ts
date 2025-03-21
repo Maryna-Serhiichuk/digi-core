@@ -1,8 +1,9 @@
 import array from '@/data/our-services.json'
-import design from '@/sources/icons/web-design.svg'
-import device from '@/sources/icons/device.svg'
-import tag from '@/sources/icons/tag.svg'
-import setting from '@/sources/icons/setting.svg'
+
+import Design from '@/components/icons/WebDesign'
+import Device from '@/components/icons/Device'
+import Tag from '@/components/icons/Tag'
+import Setting from '@/components/icons/Setting'
 
 import blueFull1 from '@/sources/view-blue/full-01.jpg'
 import blueMid1 from '@/sources/view-blue/middle-01.jpg'
@@ -23,10 +24,10 @@ import greenFull2 from '@/sources/view-green/full-01.jpg'
 import greenMid2 from '@/sources/view-green/middle-01.jpg'
 
 const icons = [
-    design,
-    device,
-    tag,
-    setting
+    Design,
+    Device,
+    Tag,
+    Setting
 ]
 
 const views = [
@@ -48,4 +49,4 @@ const views = [
     ],
 ]
 
-export const ourServices = array?.map((item, index) => ({ ...item, icon: icons[index], images: views[index] }))
+export const ourServices = array?.map((item, index) => ({ ...item, element: icons[index], images: views[index] }))

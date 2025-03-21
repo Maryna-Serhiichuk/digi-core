@@ -1,10 +1,11 @@
-import smile from '@/sources/icons/smile.svg'
-import heart from '@/sources/icons/hand-heart.svg'
+import Smile from '@/components/Icons/Smile'
+import Heart from '@/components/Icons/HandHeart'
+
 import array from '@/data/stories.json'
 
 const icons = [
-    smile,
-    heart
+    Smile,
+    Heart
 ]
 
-export const stories = array?.map((item, index) => ({ ...item, icon: icons[index] }))
+export const stories = array?.map((item, index) => ({ ...item, element: icons[index] }))

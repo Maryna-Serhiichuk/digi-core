@@ -15,7 +15,7 @@ interface JobArgs extends IconSquareLabelArgs {
     description?: string
 }
 
-export const Job: FC<JobArgs> = ({ id, icon, title, salary, experience, deadline, description }) => {
+export const Job: FC<JobArgs> = ({ id, title, salary, experience, deadline, description, ...iconProps }) => {
     return <ContainerBg xs={24} sm={24} lg={12}>
         <Padding inlineSize={'small'} blockSize={'small'}>
             <Flex vertical gap={30}>
@@ -23,7 +23,7 @@ export const Job: FC<JobArgs> = ({ id, icon, title, salary, experience, deadline
                     <Row align={'middle'} justify={'space-between'} wrap={false}>
                         <Col>
                             <Link href={'job/id'}>
-                                <IconSquareLabel icon={icon} title={title}/>
+                                <IconSquareLabel {...iconProps} title={title}/>
                             </Link>
                         </Col>
                         <Col>

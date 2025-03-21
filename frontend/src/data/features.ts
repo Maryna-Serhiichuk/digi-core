@@ -1,14 +1,14 @@
-import pen from '@/sources/icons/pen.svg'
-import star from '@/sources/icons/star.svg'
-import user from '@/sources/icons/user.svg'
-import time from '@/sources/icons/time.svg'
+import Pen from '@/components/Icons/Pen'
+import Star from '@/components/Icons/Star'
+import User from '@/components/Icons/User'
+import Time from '@/components/Icons/Time'
 import array from '@/data/features.json'
 
 const icons = [
-    pen,
-    star,
-    user,
-    time
+    Pen,
+    Star,
+    User,
+    Time
 ]
 
-export const features = array?.map((item, index) => ({ ...item, icon: icons[index] }))
+export const features = array?.map((item, index) => ({ ...item, element: icons[index] }))

@@ -1,5 +1,5 @@
-import star from '@/sources/icons/star.svg'
-import balloon from '@/sources/icons/balloon.svg'
+import Star from '@/components/Icons/Star'
+import Balloon from '@/components/Icons/Balloon'
 
 import lightPurpleFull from '@/sources/light-purple/full.jpg'
 import lightPurpleMid from '@/sources/light-purple/middle.jpg'
@@ -9,9 +9,10 @@ import lightYellowFull from '@/sources/light-yellow/full.jpg'
 import lightYellowMid from '@/sources/light-yellow/middle.jpg'
 import lightYellowMob from '@/sources/light-yellow/mob.jpg'
 
-import { getMembers, MemberType } from './members/members'
+import { getMembers } from './members/members'
 import { StaticImageData } from 'next/image'
 import { PictureArgs } from '@/components/Picture'
+import { ComponentType, SVGProps } from 'react'
 
 interface OurWorksType {
     id: string
@@ -20,7 +21,8 @@ interface OurWorksType {
     category: string
     time: string
     technologies: string[]
-    icon: StaticImageData
+    icon?: StaticImageData
+    element: ComponentType<SVGProps<SVGSVGElement>>
     image: PictureArgs
     members: MemberType[]
 }
@@ -37,7 +39,7 @@ const ourWorksPrevent: Array<OurWorksTypeIds> = [
         category: "Mobile App Development",
         time: "6 months",
         technologies: ["React Native", "Firebase", "Redux", "REST API", "MongoDB"],
-        icon: star,
+        element: Star,
         image: { full: lightPurpleFull,middle: lightPurpleMid, mobile: lightPurpleMob },
         members: ["5", "8", "9", "10", "12"]
     },
@@ -48,7 +50,7 @@ const ourWorksPrevent: Array<OurWorksTypeIds> = [
         category: "Web Design & Development",
         time: "3 months",
         technologies: ["WordPress", "PHP", "HTML5", "CSS3", "JavaScript"],
-        icon: balloon,
+        element: Balloon,
         image: { full: lightYellowFull, middle: lightYellowMid, mobile: lightYellowMob },
         members: ["5", "7", "8", "10", "13"]
     }

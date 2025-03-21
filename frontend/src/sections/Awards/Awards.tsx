@@ -5,7 +5,7 @@ import awards from '@/data/awards.json'
 import { ContainerBg } from "@/components/ContainerBg";
 import { Padding } from "@/components/Padding";
 import { Col, Flex, Grid, Row, Typography } from "antd";
-import Award from '@/sources/icons/award.svg'
+import Award from '@/components/Icons/Award'
 import { Tag } from "@/components/Tag";
 import { IconSquare } from "@/components/IconSquare";
 
@@ -26,7 +26,7 @@ export const Awards: FC = () => {
                                     <Tag name={(!lg) || (lg && xl) ? 'Date' : undefined} value={award?.date} />
                                 </Col>
                                 <Col>
-                                    <IconSquare icon={Award} alt={'award'}/>
+                                    <IconSquare element={Award}/>
                                 </Col>
                             </Row>
                             <Title>

@@ -11,9 +11,9 @@ const Label = styled(Col)`
     margin-left: 16px;
 `
 
-export const IconSquareLabel: FC<IconSquareLabelArgs> = ({ icon ,title }) => {
+export const IconSquareLabel: FC<IconSquareLabelArgs> = ({ title, ...props }) => {
     return <Row align={'middle'} wrap={false}>
-        <IconSquare icon={icon} alt={title} />
+        <IconSquare {...props} />
         <Label>
             <Typography.Title level={3}>
                 {title}

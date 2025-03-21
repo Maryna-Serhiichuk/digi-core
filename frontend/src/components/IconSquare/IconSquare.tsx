@@ -1,12 +1,11 @@
 import { responsiveSize } from "@/utils/responsiveSize";
-import { FC } from "react";
-import Image, { StaticImageData } from "next/image";
+import { ComponentType, FC, SVGProps } from "react";
 import styled from "@emotion/styled"
 import { Col } from "antd";
 
 export interface IconSquareArgs {
-    icon: StaticImageData
-    alt: string
+    element?: ComponentType<SVGProps<SVGSVGElement>>
+    size?: number
 }
 
 const ImageRec = styled(Col)`
@@ -14,10 +13,13 @@ const ImageRec = styled(Col)`
     border: 1px solid ${({ theme }: any) =>  theme?.token?.colors?.dark[20]};
     ${responsiveSize('padding', 16, 12, 8)}
     border-radius: 12px;
+    svg {
+        fill: ${({ theme }: any) =>  theme?.token?.colors?.orange[60]};
+    }
 `
 
-export const IconSquare: FC<IconSquareArgs> = ({ icon, alt }) => {
+export const IconSquare: FC<IconSquareArgs> = ({ element: Icon, size }) => {
     return <ImageRec>
-        <Image width={34} src={icon} alt={alt + "icon"} />
+        {Icon && <Icon height={size ?? 34} width={size ?? 34}/>}
     </ImageRec>
 }

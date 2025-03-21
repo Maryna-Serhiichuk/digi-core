@@ -26,7 +26,7 @@ const SpaceBetween = styled(ResponsiveSpace)`
     justify-content: space-between;
 `
 
-export const IconDescription: FC<IconDescriptionArgs> = ({ icon, title, description, price, image, images }) => {
+export const IconDescription: FC<IconDescriptionArgs> = ({ title, description, price, image, images, ...iconProps }) => {
     const { sm, xl } = Grid.useBreakpoint()
 
     return <Fragment>
@@ -36,7 +36,7 @@ export const IconDescription: FC<IconDescriptionArgs> = ({ icon, title, descript
                     <SpaceBetween direction={'vertical'}>
                         <Row justify={'space-between'} wrap={false} style={{ width: '100%' }}>
                             <Col>
-                                <IconSquareLabel icon={icon} title={title}/>
+                                <IconSquareLabel {...iconProps} title={title}/>
                             </Col>
                             <Col hidden={!sm}>
                                 <DarkArrowButton color={'ghost'} href={'/services'}>

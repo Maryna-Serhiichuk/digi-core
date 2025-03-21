@@ -23,7 +23,7 @@ const SpaceBetween = styled('div')`
 `
 
 
-export const ProjectHead: FC<ProjectHeadArgs> = ({ tags, description, icon, title, ...containerProps }) => {
+export const ProjectHead: FC<ProjectHeadArgs> = ({ tags, description, icon, title, element, ...containerProps }) => {
     const { xs } = Grid.useBreakpoint()
 
     return <ContainerBg {...containerProps}>
@@ -31,7 +31,7 @@ export const ProjectHead: FC<ProjectHeadArgs> = ({ tags, description, icon, titl
             <SpaceBetween>
                 <Row justify={'space-between'} wrap={false} style={{ width: '100%' }}>
                     <Col>
-                        <IconSquareLabel icon={icon} title={title} />
+                        <IconSquareLabel icon={icon} title={title} element={element} />
                     </Col>
                     <Col hidden={xs}>
                         <DarkArrowButton color={'ghost'} href={'/projects'}>

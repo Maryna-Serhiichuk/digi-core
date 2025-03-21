@@ -20,8 +20,6 @@ const Light = styled(Row)`
     background: ${({ theme }: any) => theme?.token?.colors?.dark[12]};
 `
 
-
-
 export const Testimonials: FC = () => {
     return <Section label={"Testimonials"} id={'testimonials'}>
         {testimonials?.map(testimonial => (

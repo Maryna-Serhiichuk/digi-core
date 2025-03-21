@@ -29,7 +29,7 @@ export const Socials: FC = () => {
                             <Col span={24}>
                                 <Row justify={'space-between'}>
                                     <Col>
-                                        <IconSquare icon={social?.icon} alt={social?.name}/>
+                                        <IconSquare element={social?.element}/>
                                     </Col>
                                     <Col>
                                         <ArrowCircle color={'ghost'}/>

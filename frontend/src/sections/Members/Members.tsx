@@ -8,12 +8,12 @@ import { Picture } from "@/components/Picture";
 import { Padding } from "@/components/Padding";
 import { responsiveSize } from "@/utils/responsiveSize";
 import { CircleIconButton } from "@/components/CircleIconButton";
-import Facebook from '@/sources/icons/facebook.svg'
-import Twitter from '@/sources/icons/twitter.svg'
-import Linkedin from '@/sources/icons/linkedin.svg'
+import Facebook from '@/components/Icons/Facebook'
+import Twitter from '@/components/Icons/Twitter'
+import Linkedin from '@/components/Icons/Linkedin'
 
 const Photo = styled(Row)`
-    background: #E7BEB1;
+    background: ${({ theme }: any) => theme?.token?.colors?.orange[80]};
     border-radius: 12px;
     height: 220px;
     ${responsiveSize('height', 220, 180, 150)}
@@ -55,9 +55,9 @@ export const Members: FC = () => {
                                 </Photo>
                                 <Row justify={'center'}>
                                     <Space size={14}>
-                                        <CircleIconButton icon={Facebook} link={person?.facebook}/>
-                                        <CircleIconButton icon={Twitter} link={person?.twitter}/>
-                                        <CircleIconButton icon={Linkedin} link={person?.linkedin}/>
+                                        <CircleIconButton element={Facebook} link={person?.facebook}/>
+                                        <CircleIconButton element={Twitter} link={person?.twitter}/>
+                                        <CircleIconButton element={Linkedin} link={person?.linkedin}/>
                                     </Space>
                                 </Row>
                             </Flex>
