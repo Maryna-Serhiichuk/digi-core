@@ -29,25 +29,27 @@ const darkTheme: ThemeConfig = {
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const { xs, sm, md, lg, xl } = Grid.useBreakpoint()
     const [isDarkMode, setIsDarkMode] = useState(false)
-    const [primaryColor, setPrimaryColor] = useState<ColorsType['primary']>({
-        '60': '#ce7d63',
-        '65': '#D48E77',
-        '70': '#DA9E8A',
-        '80': '#E7BEB1',
-        '90': '#F3DFD8',
-        '95': '#F9EFEC',
-        '97': '#FBF5F3',
-        '99': '#FEFCFB'
-    })
-    const [themeColor, setThemeColor] = useState<ColorsType['dark']>({
-        '06': '#0F0F0F',
-        '10': '#191919',
-        '12': '#1F1F1F',
-        '15': '#262626',
-        '20': '#333333',
-        '25': '#404040',
-        '30': '#4C4C4C',
-        '35': '#595959'
+    const [theme, setTheme] = useState<Pick<ColorsType, 'dark' | 'primary'>>({
+        primary: {
+            '60': '#ce7d63',
+            '65': '#D48E77',
+            '70': '#DA9E8A',
+            '80': '#E7BEB1',
+            '90': '#F3DFD8',
+            '95': '#F9EFEC',
+            '97': '#FBF5F3',
+            '99': '#FEFCFB'
+        },
+        dark: {
+            '06': '#0F0F0F',
+            '10': '#191919',
+            '12': '#1F1F1F',
+            '15': '#262626',
+            '20': '#333333',
+            '25': '#404040',
+            '30': '#4C4C4C',
+            '35': '#595959'
+        }
     })
 
     const getCollapseHeadPadding = useCallback(() => {
@@ -65,8 +67,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 text: '#ffffff',
                 background: '#000000'
             },
-            primary: primaryColor,
-            dark: themeColor,
+            ...theme,
             grey: {
                 '40': '#676665',
                 '50': '#81807E',
@@ -78,7 +79,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 '99': '#FCFCFC'
             }
         }
-    }, [primaryColor, themeColor])
+    }, [theme])
 
     const globalStyles = useMemo(() => {
         return `
@@ -237,11 +238,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                             <Flex gap={20} align={'center'}>
                                 <Flex align={'center'}>
                                     Theme:
-                                    <Color defaultValue={'#0F0F0F'} type={'theme'} onChange={values => setThemeColor(values as ColorsType['dark'])}/>
-                                </Flex>
-                                <Flex align={'center'}>
-                                    Color:
-                                    <Color defaultValue={'#DA9E8A'} type={'primary'} onChange={values => setPrimaryColor(values as ColorsType['primary'])}/>
+                                    <Color onChange={values => setTheme(values)}/>
                                 </Flex>
                             </Flex>
                         </Row>
