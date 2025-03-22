@@ -29,8 +29,6 @@
     </tr>
 </table>
 
----
-
 ## Start
 
 1. Clone
