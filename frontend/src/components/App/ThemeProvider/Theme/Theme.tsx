@@ -8,15 +8,14 @@ interface ColorArgs {
 type OptionType = { theme: string, color: string }
 
 const options: Array<OptionType> = [
-    { theme: 'rgb(15, 15, 15)', color: 'rgb(250, 125, 82)' },
+    { theme: 'rgb(15, 15, 15)', color: 'rgb(206, 125, 99)' },
     { theme: 'rgb(26, 37, 51)', color: 'rgb(248, 199, 204)' },
     { theme: 'rgb(31, 39, 27)', color: 'rgb(244, 162, 97)' },
     { theme: 'rgb(10, 15, 13)', color: 'rgb(255, 209, 102)' },
     { theme: 'rgb(33, 37, 41)', color: 'rgb(32, 201, 151)' },
-    // { theme: '', color: '' },
 ]
 
-export const Color: FC<ColorArgs> = ({ onChange }) => {
+export const Theme: FC<ColorArgs> = ({ onChange }) => {
     const [theme, setTheme] = useState<Pick<ColorsType, 'dark' | 'primary'>>()
 
     useEffect(() => {
@@ -48,18 +47,37 @@ export const Color: FC<ColorArgs> = ({ onChange }) => {
             return Object.fromEntries(pal)
         }
 
+        function generateRGB(r: number, g: number, b: number, factor: number, isDarkening: boolean = false): string {
+            const calcValue = (base: number) => 
+                isDarkening 
+                    ? Math.round(base * factor) 
+                    : Math.round(base + (255 - base) * factor);
+            return `rgb(${calcValue(r)}, ${calcValue(g)}, ${calcValue(b)})`;
+        }
+
         const getPrimaty = () => {
             const { r, g, b } = rgbToObject(color)
-            return {
-                '60': `rgb(${Math.round(r * 0.7)}, ${Math.round(g * 0.7)}, ${Math.round(b * 0.7)})`,
-                '65': `rgb(${Math.round(r * 0.85)}, ${Math.round(g * 0.85)}, ${Math.round(b * 0.85)})`,
-                '70': `rgb(${r}, ${g}, ${b})`,
-                '80': `rgb(${Math.round(r + (255 - r) * 0.2)}, ${Math.round(g + (255 - g) * 0.2)}, ${Math.round(b + (255 - b) * 0.2)})`,
-                '90': `rgb(${Math.round(r + (255 - r) * 0.4)}, ${Math.round(g + (255 - g) * 0.4)}, ${Math.round(b + (255 - b) * 0.4)})`,
-                '95': `rgb(${Math.round(r + (255 - r) * 0.6)}, ${Math.round(g + (255 - g) * 0.6)}, ${Math.round(b + (255 - b) * 0.6)})`,
-                '97': `rgb(${Math.round(r + (255 - r) * 0.8)}, ${Math.round(g + (255 - g) * 0.8)}, ${Math.round(b + (255 - b) * 0.8)})`,
-                '99': `rgb(${Math.round(r + (255 - r) * 0.95)}, ${Math.round(g + (255 - g) * 0.95)}, ${Math.round(b + (255 - b) * 0.95)})`
+            const factors: { [key in keyof ColorsType['primary']]: number } = {
+                '60': 1,
+                '65': 0.85,
+                '70': 0.25,
+                '80': 0.2,
+                '90': 0.7,
+                '95': 0.9,
+                '97': 0.8,
+                '99': 0.95
             }
+            
+            return {
+                '60': generateRGB(r, g, b, factors['60'], true),
+                '65': generateRGB(r, g, b, factors['65'], true),
+                '70': generateRGB(r, g, b, factors['70']),
+                '80': generateRGB(r, g, b, factors['80']),
+                '90': generateRGB(r, g, b, factors['90']),
+                '95': generateRGB(r, g, b, factors['95']),
+                '97': generateRGB(r, g, b, factors['97']),
+                '99': generateRGB(r, g, b, factors['99'])
+            };
         }
         
         setTheme({ dark: getDark(), primary: getPrimaty() })
@@ -76,13 +94,12 @@ export const Color: FC<ColorArgs> = ({ onChange }) => {
 
     return <div style={{ padding: 5, display: 'flex', gap: 10 }}>
         {options?.map(opt => (
-            <div style={{ 
+            <div key={opt?.color} style={{ 
                 background: `linear-gradient(to bottom right, ${opt?.theme} 30%, ${opt?.color} 70%)`,
                 height: 25,
-                width: 25
-            }} onClick={() => shapeColors(opt)}>
-
-            </div>
+                width: 25,
+                cursor: 'pointer'
+            }} onClick={() => shapeColors(opt)}/>
         ))}
     </div>
 }

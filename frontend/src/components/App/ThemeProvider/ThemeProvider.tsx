@@ -1,13 +1,15 @@
 "use client"
 
-import { FC, PropsWithChildren, useState, useMemo, useCallback } from 'react';
+import { FC, PropsWithChildren, useState, useMemo, useCallback, useEffect } from 'react';
 import { Col, ConfigProvider, Flex, Grid, Row } from 'antd';
 import { Roboto_Mono, Roboto_Flex } from 'next/font/google'
 import EmotionProvider from '../EmotionProvider';
 import { responsiveSize } from '@/utils/responsiveSize';
 import { ColorsType, ThemeConfig } from '@/types/theme';
 import { Padding } from '@/components/Padding';
-import { Color } from '@/components/Color';
+import { Theme } from '@/components/App/ThemeProvider/Theme';
+import { ThemeCache } from './ThemeCache';
+
 
 const robotoMono = Roboto_Mono({
     weight: ['400', '500', '700'],
@@ -169,10 +171,10 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
               ghostBg: colors.dark[12],
               defaultGhostColor: colors.primary[95],
               defaultGhostBorderColor: 'transparent',
-              defaultBg: colors.absolute.background,
+              defaultBg: colors.dark['06'],
               defaultColor: colors.grey[50],
               defaultBorderColor: 'transparent',
-              defaultHoverBg: colors.absolute.background,
+              defaultHoverBg: colors.dark['06'],
               defaultHoverColor: colors.primary[80],
               defaultHoverBorderColor: 'transparent',
               defaultActiveBg: colors.primary[80],
@@ -220,6 +222,18 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                 colorWhite: colors?.dark?.['06'],
                 controlInteractiveSize: 28,
                 fontSize: 18
+            },
+            Modal: {
+                titleColor: colors.primary[95],
+                fontSizeHeading5: 36
+            },
+            Result: {
+                iconFontSize: 50,
+                paddingLG: 0
+            },
+            Spin: {
+                dotSizeLG: 100,
+                colorPrimary: colors?.primary['60']
             }
         },
     }), [xl, colors])
@@ -229,23 +243,20 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
             theme={isDarkMode ? darkTheme : lightTheme}
         >
             <EmotionProvider>
-                <Padding inlineSize={'large'} blockSize={[24,0]}>
-                    <Col span={24}>
-                        <Row justify={'space-between'} align={'middle'}>
-                            <Col>
-                                Please note that this is not a real website. It has been created solely for portfolio purposes.
-                            </Col>
-                            <Flex gap={20} align={'center'}>
+                <ThemeCache>
+                    <Padding inlineSize={'large'} blockSize={[24,0]}>
+                        <Col span={24}>
+                            <Flex gap={20} align={'center'} justify={'end'}>
                                 <Flex align={'center'}>
                                     Theme:
-                                    <Color onChange={values => setTheme(values)}/>
+                                    <Theme onChange={values => setTheme(values)}/>
                                 </Flex>
                             </Flex>
-                        </Row>
-                    </Col>
-                </Padding>
+                        </Col>
+                    </Padding>
+                    {children}
+                </ThemeCache>
                 <style>{globalStyles}</style>
-                {children}
             </EmotionProvider>
         </ConfigProvider>
     )

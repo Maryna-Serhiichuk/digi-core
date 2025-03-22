@@ -6,7 +6,7 @@ import mobile from "@/sources/hero-about/mob.jpg"
 
 export const HeroAbout: FC = () => {
     return <Hero
-        title={'Building the Future f Technology Together'}
+        title={'Building the Future of Technology Together'}
         image={{ full, middle, mobile, alt: '' }}
     />
 }
