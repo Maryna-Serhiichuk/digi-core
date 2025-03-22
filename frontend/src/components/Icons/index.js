@@ -13,6 +13,7 @@ export { default as Setting } from "./Setting";
 export { default as Smile } from "./Smile";
 export { default as Star } from "./Star";
 export { default as Suitcase } from "./Suitcase";
+export { default as TagBlock } from "./TagBlock";
 export { default as Tag } from "./Tag";
 export { default as Time } from "./Time";
 export { default as Twitter } from "./Twitter";

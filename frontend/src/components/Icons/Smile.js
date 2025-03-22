@@ -2,9 +2,10 @@ import * as React from "react";
 const SvgSmile = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={34}
-    height={35}
+    width="1em"
+    height="1em"
     fill="#CE7D63"
+    viewBox="0 0 34 35"
     {...props}
   >
     <path

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "svg-gen": "yarn svgr --out-dir src/components/Icons src/sources/icons"
+    "svg-gen": "yarn svgr --icon --out-dir src/components/Icons src/sources/icons"
   },
   "dependencies": {
     "@ant-design/icons": "^5.6.0",
