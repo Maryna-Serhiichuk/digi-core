@@ -1,5 +1,6 @@
 import * as React from "react";
-const SvgDatabase = (props) => (
+import type { SVGProps } from "react";
+const SvgDatabase = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
