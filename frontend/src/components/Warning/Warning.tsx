@@ -32,6 +32,5 @@ export const Warning: FC = () => {
                 </Button>
             </Flex>
         </Modal>
-
     </Fragment>
 }

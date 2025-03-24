@@ -9,6 +9,7 @@ import { responsiveSize } from "@/utils/responsiveSize";
 const ContainerGap = styled(Col)`
     display: flex;
     max-width: 1920px;
+    width: 100%;
     ${responsiveSize('padding-left', 50, 40, 16)}
     ${responsiveSize('padding-right', 50, 40, 16)}
     ${responsiveSize('padding-top', 20, 20, 20)}

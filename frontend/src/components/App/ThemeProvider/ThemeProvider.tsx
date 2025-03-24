@@ -256,6 +256,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                     </Padding>
                     {children}
                 </ThemeCache>
+                {children}
                 <style>{globalStyles}</style>
             </EmotionProvider>
         </ConfigProvider>

@@ -14,6 +14,9 @@ export const responsiveSize = (property: string, pcSize: number, middleSize: num
 
     return `
         ${property}: calc(${mob/1.21}px + ${addSize} * (100vw/${maxView}));
+        @media(min-width: 1920px) {
+            ${property}: ${pcSize}px;
+        }
         @media(max-width: 1440px) {
             ${property}: calc(${mob}px + ${addMiddleSize} * ((100vw)/${middleView}));
         }
